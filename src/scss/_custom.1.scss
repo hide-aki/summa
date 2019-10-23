@@ -1,0 +1,54 @@
+$gradientscroll: linear-gradient(
+  to right,
+  rgba(214, 214, 214, 1) 0%,
+  rgb(240, 240, 240) 50%,
+  rgba(214, 214, 214, 1) 100%
+);
+
+.fileName h5 {
+  font-size: 15px;
+}
+
+.card-accent-warning-heigth {
+  border-top-width: 2px;
+  max-height: 600px !important;
+  height: 460px;
+  min-height: 500px;
+}
+
+.margin-buttom-px {
+  margin-bottom: 10px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.button-load-file {
+  max-width: 160px;
+}
+
+.labelErrorFile {
+  color: red;
+  position: center !important;
+}
+
+// Scroll
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+// Track
+::-webkit-scrollbar-track {
+  background: $gradientscroll;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  background: #ccc;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #c5c5c5;
+}

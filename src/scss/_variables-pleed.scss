@@ -1,0 +1,44 @@
+
+// ===== ///// COLORES PLEED-TECH ///// ====== //
+
+
+$purpleB: hsl(270,95%,49%);
+
+$greenB: hsl(69,96%,40%);
+
+$redB: hsl(0, 57%, 70%);
+
+$darkerB: hsl(0,0%,24%);
+
+$pleed-colors: (
+
+  green: ( 
+    base: $greenB,
+    light: lighten($greenB, 10%),
+    dark: darken($greenB, 10%),
+    dark2: darken($greenB, 20%)
+  ),
+
+  red: ( 
+    base: $redB,
+    light: lighten($redB, 10%),
+    dark: darken($redB, 10%),
+    dark2: darken($redB, 20%)
+  ),
+
+  purple: (
+    base: $purpleB,
+    light: lighten($purpleB, 10%),
+    dark: darken($purpleB, 10%)
+  ),
+
+  gray: (
+    base: $darkerB,
+    light: lighten($darkerB, 10%)
+  )
+
+);
+
+@function color-pleed($color-key, $variation: 'base') {
+  @return map-get(map-get($pleed-colors, $color-key), $variation);
+}

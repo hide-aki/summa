@@ -1,0 +1,152 @@
+{
+  "name": "@coreui/coreui-pro-react-admin-template-starter",
+  "version": "2.1.2",
+  "description": "CoreUI Pro React Admin Template Starter",
+  "author": {
+    "name": "Łukasz Holeczek",
+    "url": "http://holeczek.pl",
+    "github": "https://github.com/mrholek",
+    "twitter": "https://twitter.com/lukaszholeczek"
+  },
+  "contributors": [
+    {
+      "name": "Andrzej Kopański",
+      "url": "https://github.com/xidedix"
+    }
+  ],
+  "homepage": "/",
+  "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
+  "license": "https://coreui.io/pro/license/",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coreui/coreui-pro-react-admin-template-starter.git"
+  },
+  "dependencies": {
+    "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
+    "@coreui/coreui-pro": "^2.1.1",
+    "@coreui/icons": "^0.3.0",
+    "@coreui/react": "^2.1.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@pleedtech/pt-components": "^1.0.79",
+    "antd": "^3.13.2",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "chart.js": "^2.7.3",
+    "classnames": "^2.2.6",
+    "codemirror": "^5.42.0",
+    "connected-react-router": "^6.2.2",
+    "core-js": "^2.5.7",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "express": "^4.16.4",
+    "flag-icon-css": "^3.2.1",
+    "font-awesome": "^4.7.0",
+    "formik": "^1.3.2",
+    "history": "^4.7.2",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.6",
+    "react-alice-carousel": "^1.13.11",
+    "react-app-polyfill": "^0.1.3",
+    "react-big-calendar": "0.19.2",
+    "react-bootstrap-table": "4.3.1",
+    "react-chartjs-2": "^2.7.4",
+    "react-dates": "^18.2.2",
+    "react-dom": "^16.6.3",
+    "react-dropzone": "4.1.3",
+    "react-flags-select": "^1.1.0",
+    "react-grid-layout": "^0.16.6",
+    "react-input-currency": "^1.0.10",
+    "react-intl": "^2.8.0",
+    "react-ladda": "6.0.0",
+    "react-live-clock": "^3.1.0",
+    "react-loadable": "^5.5.0",
+    "react-mati": "0.0.2",
+    "react-number-format": "^4.0.6",
+    "react-quill": "1.3.2",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-config": "^4.4.0-beta.6",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "react-router-scroll": "^0.4.4",
+    "react-select": "^1.3.0",
+    "react-table": "^6.7.5",
+    "react-test-renderer": "^16.6.3",
+    "react-text-mask": "^5.4.3",
+    "react-text-mask-hoc": "^0.11.0",
+    "react-toastify": "^4.4.3",
+    "react-toastr": "^2.9.5",
+    "reactstrap": "^6.5.0",
+    "redux": "^4.0.1",
+    "redux-action-buffer": "^1.2.0",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-persist-immutable": "^4.3.1",
+    "redux-persist-transform-immutable": "^5.0.0",
+    "redux-saga": "^1.0.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "simple-line-icons": "^2.4.1",
+    "spinkit": "1.2.5",
+    "yup": "^0.26.6"
+  },
+  "devDependencies": {
+    "babel-plugin-react-intl": "^3.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.3.0",
+    "mutationobserver-shim": "^0.3.2",
+    "npm": "^6.8.0",
+    "prettier": "^1.16.4",
+    "react-scripts": "^2.1.8",
+    "workbox-build": "^4.1.1",
+    "workbox-cli": "^4.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build-sw": "node ./src/sw-build.js",
+    "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
+    "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw",
+    "test": "react-scripts test",
+    "test:cov": "react-scripts test --coverage",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "eject": "react-scripts eject",
+    "prod": "react-scripts build && npm run build-sw && npm run clean-cra-sw && node server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/coreui/coreui-pro-react-admin-template-starter/issues"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "globals": {
+      "window": true,
+      "document": true
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/*index.js",
+      "!src/serviceWorker.js",
+      "!src/polyfill.js"
+    ]
+  }
+}

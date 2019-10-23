@@ -1,0 +1,27 @@
+
+// ===== ///// FORM CONTROLS PLEED TECH ///// ===== //
+
+input {
+  &.inputControl{
+    border: solid $greenB 1px;
+  }
+
+  &.roundedControl {
+    border-radius: 30px;
+  }
+}
+
+.toggleControl{
+  border-radius: 3px 30px 30px 3px; 
+  background-color: $greenB;
+  border: 1px solid $greenB;
+  color: white;
+}
+
+.dropDownRounded{
+  border-radius: 3px 30px 30px 3px !important;
+}
+
+.coinControl{
+  text-align: left;
+}

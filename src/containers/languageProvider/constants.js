@@ -1,0 +1,41 @@
+/*
+ *
+ * LanguageProvider constants
+ *
+ */
+export const CHANGE_LOCALE = 'app/LanguageToggle/CHANGE_LOCALE';
+export const DEFAULT_LOCALE = 'en';
+export const SET_MESSAGES = 'SET_MESSAGES';
+
+const LANGUAGE_PROVIDER = {
+  ACTIONS: {
+    SET_MESSAGES: 'SET_MESSAGES',
+    SET_ID_LANGUAGE_MESSAGES: 'SET_ID_LANGUAGE_MESSAGES',
+    SET_TEMPORAL_LOGIN_MESSAGES: 'SET_TEMPORAL_LOGIN_MESSAGES',
+    SET_CURRENT_MESSAGES: 'SET_CURRENT_MESSAGES',
+    CLEAR_LANGUAGE_PROVIDER_STATE: 'CLEAR_LANGUAGE_PROVIDER_STATE',
+    SET_CATALOG_LANGUAGES: 'SET_CATALOG_LANGUAGES',
+  },
+  CHANGE_LOCALE: 'app/LanguageToggle/CHANGE_LOCALE',
+  LANGUAGE: {
+    DEFAULT_LOCALE: {
+      LOCALE: 'en',
+      ID_LANGUAGE: 1,
+    },
+    ENGLISH: {
+      LOCALE: 'en',
+      ID_LANGUAGE: 1,
+    },
+    SPANISH_MEXICO: {
+      LOCALE: 'es',
+      ID_LANGUAGE: 2,
+    },
+    SPANISH_COLOMBIA: {
+      LOCALE: 'es-co',
+      ID_LANGUAGE: 4,
+    },
+  },
+  MESSAGES_CODES: {},
+};
+
+export { LANGUAGE_PROVIDER };

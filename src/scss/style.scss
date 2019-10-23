@@ -1,0 +1,40 @@
+// If you want to override variables do it here
+@import 'variables';
+
+// VARIABLES CUSTOM PLEED-TECH
+@import 'variables-pleed';
+
+// Import styles with default layout.
+// If you are going to use dark layout please comment next line
+@import '~@coreui/coreui-pro/scss/coreui.scss';
+
+// Import styles with dark layout
+// If you want to use dark layout uncomment next line
+//@import "~@coreui/coreui-pro/scss/themes/dark/coreui-dark.scss";
+
+// Temp fix for reactstrap
+@import '~@coreui/coreui-pro/scss/_dropdown-menu-right.scss';
+
+// If you want to add something do it here
+@import 'custom';
+@import 'custom.1';
+
+// CUSTOM STYLES ELEMENTS PLEED-TECH
+@import 'elements-custom';
+
+// // ESTILOS BALCKBOX
+// @import "../scss/blackbox/_blackbox";
+// @import "../scss/blackbox/_blackbox_responsive";
+
+//estilos Alpha
+@import '../scss/alpha/alphastyles';
+@import './alpha/alphastyles';
+
+@import './kari_scss/kari_style';
+
+// ie fixes
+@import 'ie-fix';
+
+// Spinkit
+$spinkit-spinner-color: $body-color;
+@import '~spinkit/scss/spinkit.scss';
