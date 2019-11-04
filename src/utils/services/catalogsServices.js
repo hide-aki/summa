@@ -19,13 +19,9 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_QUERY_FIELD_BY_ID_SECTION_COMBO_BOX
-      }/${idCompany}/${idScreenCode}/${idSection}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_QUERY_FIELD_BY_ID_SECTION_COMBO_BOX}/${idCompany}/${idScreenCode}/${idSection}`;
     } else {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_QUERY_FIELD_BY_ID_SECTION
-      }/${idCompany}/${idScreenCode}/${idSection}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_QUERY_FIELD_BY_ID_SECTION}/${idCompany}/${idScreenCode}/${idSection}`;
     }
     try {
       const response = await this.requester.get(endpoint, this.headers);
@@ -44,16 +40,12 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_OPERATORS_BY_ID_QUERY_FIELD_COMBO_BOX
-      }/${idCompany}/${idScreenCode}/${idSection}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_OPERATORS_BY_ID_QUERY_FIELD_COMBO_BOX}/${idCompany}/${idScreenCode}/${idSection}`;
       if (isNil(idQueryField) === false) {
         endpoint = `${endpoint}/${idQueryField}`;
       }
     } else {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_OPERATORS_BY_ID_QUERY_FIELD
-      }/${idCompany}/${idScreenCode}/${idSection}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_OPERATORS_BY_ID_QUERY_FIELD}/${idCompany}/${idScreenCode}/${idSection}`;
 
       if (isNil(idQueryField) === false) {
         endpoint = `${endpoint}/${idQueryField}`;
@@ -71,6 +63,45 @@ class CatalogsServices {
     try {
       const response = await this.requester.post(
         API_CONSTANTS.ALPHA.GET_COUNTRY_CATALOG,
+        data,
+        this.headers,
+      );
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  postAllNationalitiesCatalog = async (data = {}) => {
+    try {
+      const response = await this.requester.post(
+        API_CONSTANTS.ALPHA.GET_NATIONALITIES_CATALOG,
+        data,
+        this.headers,
+      );
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  postAllStatesCatalog = async (data = {}) => {
+    try {
+      const response = await this.requester.post(
+        API_CONSTANTS.ALPHA.GET_STATES_CATALOG,
+        data,
+        this.headers,
+      );
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  postAllOccupationCatalog = async (data = {}) => {
+    try {
+      const response = await this.requester.post(
+        API_CONSTANTS.ALPHA.GET_OCCUPATION_CATALOG,
         data,
         this.headers,
       );
@@ -315,9 +346,7 @@ class CatalogsServices {
     let endpoint = null;
 
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_ALL_ENTERPRISES_BY_ID_USER_COMBOBOX
-      }`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_ALL_ENTERPRISES_BY_ID_USER_COMBOBOX}`;
     } else {
       endpoint = `${API_CONSTANTS.CATALOGS.GET_ALL_ENTERPRISES_BY_ID_USER}`;
     }
@@ -443,13 +472,9 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_INCOME_STATEMENT_VIEWS_COMBOBOX
-      }/${idCompany}/${idP2GOUser}/${type}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_INCOME_STATEMENT_VIEWS_COMBOBOX}/${idCompany}/${idP2GOUser}/${type}`;
     } else {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_INCOME_STATEMENT_VIEWS
-      }/${idCompany}/${idP2GOUser}/${type}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_INCOME_STATEMENT_VIEWS}/${idCompany}/${idP2GOUser}/${type}`;
     }
 
     try {
@@ -466,9 +491,7 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_EMAIL_TEMPLATES_COMBO_BOX
-      }/${idCompany}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_EMAIL_TEMPLATES_COMBO_BOX}/${idCompany}`;
     } else {
       endpoint = `${API_CONSTANTS.CATALOGS.GET_EMAIL_TEMPLATES}/${idCompany}`;
     }
@@ -506,13 +529,9 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_TRANSACTION_STATUS_COMBOBOX
-      }/${idCompany}/${type}/${idP2GOUser}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_TRANSACTION_STATUS_COMBOBOX}/${idCompany}/${type}/${idP2GOUser}`;
     } else {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_TRANSACTION_STATUS
-      }/${idCompany}/${type}/${idP2GOUser}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_TRANSACTION_STATUS}/${idCompany}/${type}/${idP2GOUser}`;
     }
 
     try {
@@ -544,9 +563,7 @@ class CatalogsServices {
     let endpoint = null;
 
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.POST_GET_ALL_YEAR_COMBO_BOX
-      }/${idCompany}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.POST_GET_ALL_YEAR_COMBO_BOX}/${idCompany}`;
     } else {
       endpoint = `${API_CONSTANTS.CATALOGS.POST_GET_ALL_YEAR}/${idCompany}`;
     }
@@ -585,9 +602,7 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_REPORT_TYPE_ALL_COMBO_BOX
-      }${idCompany}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_REPORT_TYPE_ALL_COMBO_BOX}${idCompany}`;
     } else {
       endpoint = `${API_CONSTANTS.CATALOGS.GET_REPORT_TYPE_ALL}${idCompany}`;
     }
@@ -607,13 +622,9 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_CATALOG_BALANCE_COMBO_BOX
-      }${idCompany}/${idP2GOUser}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_CATALOG_BALANCE_COMBO_BOX}${idCompany}/${idP2GOUser}`;
     } else {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_CATALOG_BALANCE
-      }${idCompany}/${idP2GOUser}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_CATALOG_BALANCE}${idCompany}/${idP2GOUser}`;
     }
 
     try {
@@ -632,13 +643,9 @@ class CatalogsServices {
   ) => {
     let endpoint = null;
     if (isComboBox) {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_ALL_OFFICE_TYPE_COMBOBOX
-      }${idCompany}/${idP2GOUser}/${type}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_ALL_OFFICE_TYPE_COMBOBOX}${idCompany}/${idP2GOUser}/${type}`;
     } else {
-      endpoint = `${
-        API_CONSTANTS.CATALOGS.GET_ALL_OFFICE_TYPE
-      }${idCompany}/${idP2GOUser}/${type}`;
+      endpoint = `${API_CONSTANTS.CATALOGS.GET_ALL_OFFICE_TYPE}${idCompany}/${idP2GOUser}/${type}`;
     }
 
     try {

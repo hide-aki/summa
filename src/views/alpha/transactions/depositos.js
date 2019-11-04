@@ -148,7 +148,6 @@ class Depositos extends Component {
     try {
       const { postGetTransactionById } = this.props;
       const response = await postGetTransactionById(data);
-
       return response.result;
     } catch (error) {
       this.showToastrMessage(error);

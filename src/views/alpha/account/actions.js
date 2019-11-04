@@ -19,6 +19,45 @@ const postGetAllCountriesCatalog = (data) => async (dispatch, getState) => {
   }
 };
 
+const postAllNationalitiesCatalog = (data) => async (dispatch, getState) => {
+  try {
+    const state = getState();
+    const token = state.dataProfile.getIn(['dataProfile', 'token']);
+    HEADER.Authorization = API_CONSTANTS.Authorization + token;
+    const catalogsServices = new CatalogsServices(API_CONSTANTS.DOMAIN, HEADER);
+    const response = await catalogsServices.postAllNationalitiesCatalog(data);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const postAllStatesCatalog = (data) => async (dispatch, getState) => {
+  try {
+    const state = getState();
+    const token = state.dataProfile.getIn(['dataProfile', 'token']);
+    HEADER.Authorization = API_CONSTANTS.Authorization + token;
+    const catalogsServices = new CatalogsServices(API_CONSTANTS.DOMAIN, HEADER);
+    const response = await catalogsServices.postAllStatesCatalog(data);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const postAllOccupationCatalog = (data) => async (dispatch, getState) => {
+  try {
+    const state = getState();
+    const token = state.dataProfile.getIn(['dataProfile', 'token']);
+    HEADER.Authorization = API_CONSTANTS.Authorization + token;
+    const catalogsServices = new CatalogsServices(API_CONSTANTS.DOMAIN, HEADER);
+    const response = await catalogsServices.postAllOccupationCatalog(data);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const postGetAccountCustomer = (data) => async (dispatch, getState) => {
   try {
     const state = getState();
@@ -71,6 +110,9 @@ const actionsAlpha = {
   postGetAccountCustomer,
   updateAccountCustomer,
   postGetAllCountriesCatalog,
+  postAllNationalitiesCatalog,
+  postAllStatesCatalog,
+  postAllOccupationCatalog,
 };
 
 export default actionsAlpha;

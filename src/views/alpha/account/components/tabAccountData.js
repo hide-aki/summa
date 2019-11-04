@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { push } from 'react-router-redux';
 import { DatePicker, notification } from 'antd';
 import _default from 'antd/lib/locale-provider/es_ES';
@@ -50,6 +50,7 @@ import {
 } from 'utils/selectors/dataUserProfileSelectors';
 
 import { setProfileData } from '../../../../utils/actions/userProfileActions';
+import COMPONENTS_DYNAMICS from '../constants';
 const genderCatalog = [
   {
     id: 'H',
@@ -99,15 +100,31 @@ class TabAccountData extends Component {
       fullName: '',
       gender: null,
       digitalIdentity: null,
+      inputCurp: null,
+      electorKey: null,
+      dateRelationShipClosure: null,
+      inputNumberClient: null,
+      dateRelationShipStart: null,
+      selectOccupation: null,
+      selectCountryOfBirth: null,
+      valueBirthEntity: null,
+      selectNationality: null,
+      dataNationality: [],
+      dataStates: [],
+      dataOccupation: [],
+      isNational: false,
+      valueInputBirthEntity: null,
     };
     this.messagesFunctions = new MessagesFunctions(props.messages);
   }
 
-  componentWillMount() {
-    this.postGetAllCountriesCatalog();
-    this.getDataAccountCustomer();
+  componentWillMount = async () => {
+    await this.postGetAllCountriesCatalog();
+    await this.handlerPostAllOccupationCatalog();
+    await this.handlerPostAllNationalitiesCatalog();
+    await this.getDataAccountCustomer();
     this.getUrl();
-  }
+  };
 
   shouldComponentUpdate(nextProps, nextState) {
     const { idLanguage } = this.props;
@@ -151,6 +168,16 @@ class TabAccountData extends Component {
           idAddress,
           fullAddress,
           digitalIdentity,
+          finishedRelationAt,
+          idNationality,
+          curp,
+          startedRelationAt,
+          idState,
+          idCountryBirth,
+          keyElectoral,
+          customerNumber,
+          idOccupation,
+          state,
         } = response.result;
         this.setState({
           username,
@@ -177,8 +204,40 @@ class TabAccountData extends Component {
           isGetData: true,
           gender,
           digitalIdentity,
+          dateRelationShipClosure: isNil(finishedRelationAt)
+            ? null
+            : moment(finishedRelationAt, 'YYYY-MM-DD'),
+          selectNationality: idNationality,
+          inputCurp: curp,
+          dateRelationShipStart: isNil(startedRelationAt)
+            ? null
+            : moment(startedRelationAt, 'YYYY-MM-DD'),
+          valueBirthEntity: idState,
+          selectCountryOfBirth: idCountryBirth,
+          electorKey: keyElectoral,
+          inputNumberClient: customerNumber,
+          selectOccupation: idOccupation,
+          valueInputBirthEntity: state,
         });
         this.getFullName(givenName, lastName);
+        if (
+          isNil(idNationality) === false &&
+          isEmpty(idNationality) === false
+        ) {
+          let idMex = [];
+          idMex = this.state.dataNationality.find((rowFind) => {
+            return rowFind.id === idNationality;
+          });
+          this.setState({
+            isNational:
+              isNil(idMex) === false &&
+              isNil(idMex.value) === false &&
+              isNil(idMex.value.isNational) === false
+                ? idMex.value.isNational
+                : false,
+          });
+          this.handlerPostAllStatesCatalog(idNationality);
+        }
       }
     } catch (error) {
       this.openNotification(error.message, ALERT_TYPE.ERROR);
@@ -292,6 +351,16 @@ class TabAccountData extends Component {
       gender,
       fullAddress,
       digitalIdentity,
+      dateRelationShipClosure,
+      selectNationality,
+      inputCurp,
+      dateRelationShipStart,
+      valueBirthEntity,
+      selectCountryOfBirth,
+      electorKey,
+      inputNumberClient,
+      selectOccupation,
+      valueInputBirthEntity,
     } = this.state;
     const {
       dataProfile,
@@ -301,6 +370,7 @@ class TabAccountData extends Component {
     const { idCompany, idCustomer } = dataProfile;
     const data = {
       idCompany,
+      idCustomer,
       updatedByUser: dataProfile.idSystemUser,
       givenName: isEmpty(givenName) ? null : givenName,
       middleName: isEmpty(middleName) ? null : middleName,
@@ -312,6 +382,14 @@ class TabAccountData extends Component {
         isEmpty(birthdate) || isNil(birthdate)
           ? null
           : moment(birthdate).format('YYYY-MM-DD'),
+      startedRelationAt:
+        isEmpty(dateRelationShipStart) || isNil(dateRelationShipStart)
+          ? null
+          : moment(dateRelationShipStart).format('YYYY-MM-DD'),
+      finishedRelationAt:
+        isEmpty(dateRelationShipClosure) || isNil(dateRelationShipClosure)
+          ? null
+          : moment(dateRelationShipClosure).format('YYYY-MM-DD'),
       idEmailAddress: isEmpty(idEmailAddress) ? null : idEmailAddress,
       emailAddress: isEmpty(emailAddress) ? null : emailAddress,
       idPhoneNumber: isEmpty(idPhoneNumber) ? null : idPhoneNumber,
@@ -324,6 +402,15 @@ class TabAccountData extends Component {
       gender: isEmpty(gender) ? null : gender,
       idScreenCode: null,
       idSection: null,
+      idNationality: isEmpty(selectNationality) ? null : selectNationality,
+      CURP: isEmpty(inputCurp) ? null : inputCurp,
+      idState: isNil(valueBirthEntity) ? null : valueBirthEntity,
+      idCountryBirth: isEmpty(selectCountryOfBirth)
+        ? null
+        : selectCountryOfBirth,
+      keyElectoral: electorKey,
+      idOccupation: isNil(selectOccupation) ? null : selectOccupation,
+      state: isEmpty(valueInputBirthEntity) ? null : valueInputBirthEntity,
     };
     const firstName =
       isEmpty(data.givenName) && isNil(data.givenName) ? '' : data.givenName;
@@ -437,6 +524,52 @@ class TabAccountData extends Component {
     }
   }
 
+  handlerPostAllNationalitiesCatalog = async () => {
+    const { postAllNationalitiesCatalog, dataProfile } = this.props;
+    const { idCompany, idSystemUser } = dataProfile;
+    try {
+      const response = await postAllNationalitiesCatalog({
+        idCompany,
+        idSystemUser,
+        type: 1,
+      });
+      const responseResult =
+        isEmpty(response.result) === false ? response.result : [];
+      this.setState({ dataNationality: responseResult });
+    } catch (error) {}
+  };
+
+  handlerPostAllStatesCatalog = async (id) => {
+    const { postAllStatesCatalog, dataProfile } = this.props;
+    const { idCompany, idSystemUser } = dataProfile;
+    try {
+      const response = await postAllStatesCatalog({
+        idCompany,
+        idSystemUser,
+        type: 1,
+        nationality: id,
+      });
+      const responseResult =
+        isEmpty(response.result) === false ? response.result : [];
+      this.setState({ dataStates: responseResult });
+    } catch (error) {}
+  };
+
+  handlerPostAllOccupationCatalog = async () => {
+    const { postAllOccupationCatalog, dataProfile } = this.props;
+    const { idCompany, idSystemUser } = dataProfile;
+    try {
+      const response = await postAllOccupationCatalog({
+        idCompany,
+        idSystemUser,
+        type: 1,
+      });
+      const responseResult =
+        isEmpty(response.result) === false ? response.result : [];
+      this.setState({ dataOccupation: responseResult });
+    } catch (error) {}
+  };
+
   render() {
     const dateFormat = 'DD/MM/YYYY';
     const {
@@ -459,8 +592,36 @@ class TabAccountData extends Component {
       fullName,
       gender,
       digitalIdentity,
+      dateRelationShipStart,
+      inputNumberClient,
+      dateRelationShipClosure,
+      electorKey,
+      inputCurp,
+      selectOccupation,
+      selectCountryOfBirth,
+      valueBirthEntity,
+      selectNationality,
+      dataNationality,
+      isNational,
+      dataStates,
+      dataOccupation,
+      valueInputBirthEntity,
     } = this.state;
     const { dataProfile, messages } = this.props;
+    const { idSystemUser, idCompany, idUserSecurityKey } = dataProfile;
+    const userReplace =
+      isNil(idSystemUser) === false && isEmpty(idSystemUser) === false
+        ? idSystemUser.replace(/-/gi, '')
+        : "{'id':''}";
+    const companyReplace =
+      isNil(idCompany) === false && isEmpty(idCompany) === false
+        ? idCompany.replace(/-/gi, '')
+        : "{'id':''}";
+    const keyReplace =
+      isNil(idUserSecurityKey) === false && isEmpty(idUserSecurityKey) === false
+        ? idUserSecurityKey.replace(/-/gi, '')
+        : "{'id':''}";
+
     return (
       <CustomRow>
         <CustomCol xs="12">
@@ -509,6 +670,19 @@ class TabAccountData extends Component {
                 {this.messagesFunctions.getMessageFromListMessagesCode(
                   'FRL0000000000085',
                   '',
+                )}
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === '4' })}
+                onClick={() => {
+                  this.togglelist('4');
+                }}
+              >
+                {this.messagesFunctions.getMessageFromListMessagesCode(
+                  'Información Adicional',
+                  'Información Adicional',
                 )}
               </NavLink>
             </NavItem>
@@ -595,6 +769,21 @@ class TabAccountData extends Component {
                 encType="multipart/form-data"
                 className="form-horizontal"
               >
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'Número de Cliente',
+                        'Número de Cliente',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    <span>
+                      {isNil(inputNumberClient) ? '-' : inputNumberClient}
+                    </span>
+                  </CustomCol>
+                </FormGroup>
                 <FormGroup row>
                   <CustomCol md="3">
                     <Label htmlFor="text-input">
@@ -879,18 +1068,294 @@ class TabAccountData extends Component {
                     />
                   </CustomCol>
                   {isNil(digitalIdentity) === false &&
-                  digitalIdentity === false ? (
+                  digitalIdentity === false &&
+                  isNational === true ? (
                     <CustomCol xs="12" md="4">
                       <div className="mati-container">
                         <ReactMati
                           clientId="5d8ce4ea494013001b3fa84a"
                           country="mx"
                           product="kyc"
-                          style="blue"
+                          metadata={{
+                            idSystemUser: userReplace,
+                            idCompany: companyReplace,
+                            idUserSecurityKey: keyReplace,
+                          }}
                         />
                       </div>
                     </CustomCol>
                   ) : null}
+                </CustomRow>
+              </CustomForm>
+            </TabPane>
+
+            <TabPane tabId="4">
+              <CustomForm
+                action=""
+                method="post"
+                encType="multipart/form-data"
+                className="form-horizontal"
+              >
+                {/* New Components */}
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'Nacionalidad',
+                        'Nacionalidad',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    <CustomSelectOption
+                      selected={selectNationality}
+                      defaultValue={selectNationality}
+                      value={selectNationality}
+                      classButtonDropDown=""
+                      classDropdownToggle="btn-warning"
+                      classIconDropdownToggle=" fa fa-check"
+                      classDropdownItem="coinControl"
+                      classInput="input_upload"
+                      disabled={false}
+                      data={dataNationality}
+                      onChange={(event, index, value, data) => {
+                        this.setState({
+                          selectNationality: value,
+                          isNational:
+                            isNil(data.value) === false &&
+                            isNil(data.value.isNational) === false
+                              ? data.value.isNational
+                              : false,
+                        });
+                        this.handlerPostAllStatesCatalog(value);
+                      }}
+                      selectMessages={messages}
+                    />
+                  </CustomCol>
+                </FormGroup>
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'Entidad Federativa de Nacimiento',
+                        'Entidad Federativa de Nacimiento',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    {isNational === true ? (
+                      <CustomSelectOption
+                        selected={valueBirthEntity}
+                        defaultValue={valueBirthEntity}
+                        value={valueBirthEntity}
+                        classButtonDropDown=""
+                        classDropdownToggle="btn-warning"
+                        classIconDropdownToggle=" fa fa-check"
+                        classDropdownItem="coinControl"
+                        classInput="input_upload"
+                        disabled={false}
+                        data={dataStates}
+                        onChange={(event, index, value, data) => {
+                          this.setState({ valueBirthEntity: value });
+                        }}
+                        selectMessages={messages}
+                      />
+                    ) : (
+                      <CustomInput
+                        isVisible
+                        type="text"
+                        id="phone-input"
+                        name="phone-input"
+                        placeholder="55 2330 3928"
+                        className="inputBordered"
+                        value={valueInputBirthEntity}
+                        toBlock={false}
+                        disabled={false}
+                        onChange={(event, value) => {
+                          this.setState({ valueInputBirthEntity: value });
+                        }}
+                      />
+                    )}
+                  </CustomCol>
+                </FormGroup>
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'País de Nacimiento',
+                        'País de Nacimiento',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    <CustomSelectOption
+                      selected={selectCountryOfBirth}
+                      defaultValue={selectCountryOfBirth}
+                      value={selectCountryOfBirth}
+                      classButtonDropDown=""
+                      classDropdownToggle="btn-warning"
+                      classIconDropdownToggle=" fa fa-check"
+                      classDropdownItem="coinControl"
+                      classInput="input_upload"
+                      disabled={false}
+                      data={countryCatalog}
+                      onChange={(event, index, value, data) => {
+                        this.setState({ selectCountryOfBirth: value });
+                      }}
+                      selectMessages={messages}
+                    />
+                  </CustomCol>
+                </FormGroup>
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'Ocupación',
+                        'Ocupación',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    <CustomSelectOption
+                      selected={''}
+                      defaultValue={''}
+                      value={selectOccupation}
+                      classButtonDropDown=""
+                      classDropdownToggle="btn-warning"
+                      classIconDropdownToggle=" fa fa-check"
+                      classDropdownItem="coinControl"
+                      classInput="input_upload"
+                      disabled={false}
+                      data={dataOccupation}
+                      onChange={(event, index, value, data) => {
+                        this.setState({ selectOccupation: value });
+                      }}
+                      selectMessages={messages}
+                    />
+                  </CustomCol>
+                </FormGroup>
+                {isNational === true ? (
+                  <Fragment>
+                    <FormGroup row>
+                      <CustomCol md="3">
+                        <Label htmlFor="email-input">
+                          {this.messagesFunctions.getMessageFromListMessagesCode(
+                            'CURP',
+                            'CURP',
+                          )}
+                        </Label>
+                      </CustomCol>
+                      <CustomCol xs="12" md="4">
+                        <CustomInput
+                          isVisible
+                          type="text"
+                          id="phone-input"
+                          name="phone-input"
+                          placeholder="55 2330 3928"
+                          className="inputBordered"
+                          value={inputCurp}
+                          toBlock={false}
+                          disabled={false}
+                          onChange={(event, value) => {
+                            this.setState({ inputCurp: value });
+                          }}
+                        />
+                      </CustomCol>
+                    </FormGroup>
+                    <FormGroup row>
+                      <CustomCol md="3">
+                        <Label htmlFor="email-input">
+                          {this.messagesFunctions.getMessageFromListMessagesCode(
+                            'Clave de Elector',
+                            'Clave de Elector',
+                          )}
+                        </Label>
+                      </CustomCol>
+                      <CustomCol xs="12" md="4">
+                        <CustomInput
+                          isVisible
+                          type="text"
+                          id="phone-input"
+                          name="phone-input"
+                          placeholder="55 2330 3928"
+                          className="inputBordered"
+                          value={electorKey}
+                          toBlock={false}
+                          disabled={false}
+                          onChange={(event, value) => {
+                            this.setState({ electorKey: value });
+                          }}
+                        />
+                      </CustomCol>
+                    </FormGroup>
+                  </Fragment>
+                ) : null}
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'Fecha de Inicio de la relacion Contractual',
+                        'Fecha de Inicio de la relacion Contractual',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    <DatePicker
+                      format={dateFormat}
+                      locale={'esES'}
+                      placeholder="dd/mm/aaaa"
+                      datePickerClassName="input_date inputBordered"
+                      className="input-align inputBordered"
+                      value={dateRelationShipStart}
+                      onChange={(value) => {
+                        this.setState({ dateRelationShipStart: value });
+                      }}
+                    />
+                  </CustomCol>
+                </FormGroup>
+                <FormGroup row>
+                  <CustomCol md="3">
+                    <Label htmlFor="email-input">
+                      {this.messagesFunctions.getMessageFromListMessagesCode(
+                        'Fecha de Cierre de la Relacion Contractual',
+                        'Fecha de Cierre de la Relacion Contractual',
+                      )}
+                    </Label>
+                  </CustomCol>
+                  <CustomCol xs="12" md="4">
+                    <DatePicker
+                      format={dateFormat}
+                      locale={'esES'}
+                      placeholder="dd/mm/aaaa"
+                      datePickerClassName="input_date inputBordered"
+                      className="input-align inputBordered"
+                      value={dateRelationShipClosure}
+                      onChange={(value) => {
+                        this.setState({ dateRelationShipClosure: value });
+                      }}
+                    />
+                  </CustomCol>
+                </FormGroup>
+
+                {/* Call to action siguiente */}
+                <CustomRow>
+                  <CustomCol md="3">
+                    <CustomButton
+                      label={this.messagesFunctions.getMessageFromListMessagesCode(
+                        'FRL0000000000025',
+                        '',
+                      )}
+                      //classIcon="fa fa-lock mr-1"
+                      isVisible
+                      type="submit"
+                      size="md"
+                      color="warning"
+                      className="btn buttonControlCheck"
+                      onClick={() => {
+                        this.updateDataProfile();
+                      }}
+                    />
+                  </CustomCol>
                 </CustomRow>
               </CustomForm>
             </TabPane>
@@ -944,6 +1409,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(actionsAlpha.updateAccountCustomer(data, idCustomer)),
   postGetAllCountriesCatalog: (data) =>
     dispatch(actionsAlpha.postGetAllCountriesCatalog(data)),
+  postAllNationalitiesCatalog: (data) =>
+    dispatch(actionsAlpha.postAllNationalitiesCatalog(data)),
+  postAllStatesCatalog: (data) =>
+    dispatch(actionsAlpha.postAllStatesCatalog(data)),
+  postAllOccupationCatalog: (data) =>
+    dispatch(actionsAlpha.postAllOccupationCatalog(data)),
   setUserProfileData: (dataProfile) => dispatch(setProfileData(dataProfile)),
 });
 export default connect(

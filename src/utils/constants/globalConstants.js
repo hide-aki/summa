@@ -2,7 +2,7 @@ const GLOBAL_CONSTANTS = {
   idClientApp: '2',
   mobileIdNumber: '0',
   ROOT_NAME: 'crm',
-  FOOTER_TEXT_LOGIN: 'Powered by PleedTech | v.1.0.0',
+  FOOTER_TEXT_LOGIN: 'Powered by PleedTech | v.1.0.17',
   DEFAULT_OFFSET: '-05:00',
   BASE_64_PNG: 'data:image/png;base64,',
   MAIN_SCREEN: 'accounts/board',

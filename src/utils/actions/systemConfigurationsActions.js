@@ -703,11 +703,60 @@ export const postAcceptTerms = (data = {}) => async (dispatch, getState) => {
       throw actionApiValidator.resultError();
     }
 
-    data.idCustomer = idCustomer;
     data.idCompany = idCompany;
     data.idSystemUser = idSystemUser;
     data.idUserSecurityKey = idUserSecurityKey;
     const response = await systemConfigurationsServices.postAcceptTerms(data);
+
+    if (actionApiValidator.validateResponseDataEmpty(response) === true) {
+      throw actionApiValidator.resultError();
+    }
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAcceptTermsAndConditions = (data = {}) => async (
+  dispatch,
+  getState,
+) => {
+  try {
+    const state = getState();
+    const token = state.dataProfile.getIn(['dataProfile', 'token']);
+    const idCompany = state.dataProfile.getIn(['dataProfile', 'idCompany']);
+    const idSystemUser = state.dataProfile.getIn([
+      'dataProfile',
+      'idSystemUser',
+    ]);
+    const idCustomer = state.dataProfile.getIn(['dataProfile', 'idCustomer']);
+    const idUserSecurityKey = state.dataProfile.getIn([
+      'dataProfile',
+      'idUserSecurityKey',
+    ]);
+    HEADER.Authorization = API_CONSTANTS.Authorization + token;
+    const systemConfigurationsServices = new SystemConfigurationsServices(
+      API_CONSTANTS.DOMAIN,
+      HEADER,
+    );
+
+    if (
+      actionApiValidator.validateTokenIdcompanyNotEmpty(token, idCompany) ===
+        true ||
+      isEmpty(token)
+    ) {
+      throw actionApiValidator.resultError();
+    }
+
+    if (actionApiValidator.validateDataNotEmpty(data) === true) {
+      throw actionApiValidator.resultError();
+    }
+
+    data.idCompany = idCompany;
+    data.idSystemUser = idSystemUser;
+    const response = await systemConfigurationsServices.getAcceptTermsAndConditions(
+      data,
+    );
 
     if (actionApiValidator.validateResponseDataEmpty(response) === true) {
       throw actionApiValidator.resultError();

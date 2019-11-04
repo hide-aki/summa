@@ -1312,6 +1312,7 @@ const API_CONSTANTS = {
     GET_MENU_TEMPLATE: `${PORTS.ALPHA}${API.API}/menu/template`,
     POST_PAYMENT_TYPE: `${PORTS.ALPHA}${API.API}/catalogsClient/paymentType/all/combobox`,
     POST_ACCEPT_TERMS: `${PORTS.BLACK_BOX}${API.API}/client/customer/AcceptTerms`,
+    GET_TERMS_AND_CONDITIONS: `${PORTS.BLACK_BOX}${API.API}/Client/Parameter/TermsConditions`,
     POST_GET_ACCOUNT_CUSTOMER: `${PORTS.ALPHA + API.ALPHA}/customer/account`,
     ALFA_LOGIN: `${`${PORTS.BLACK_BOX}/api/Login`}`,
     GET_PROFILE_BY_SYSTEM_USER: `${`${PORTS.ALPHA}/api/client` +
@@ -1340,6 +1341,12 @@ const API_CONSTANTS = {
       API.API}/Login/PasswordRequest`,
     GET_COUNTRY_CATALOG: `${PORTS.ALPHA +
       API.API}/catalogsClient/masterCountry/all/combobox`,
+    GET_NATIONALITIES_CATALOG: `${PORTS.ALPHA +
+      API.API}/catalogsClient/masterCountry/nationalities/all/combobox`,
+    GET_STATES_CATALOG: `${PORTS.ALPHA +
+      API.API}/catalogsClient/state/all/combobox`,
+    GET_OCCUPATION_CATALOG: `${PORTS.ALPHA +
+      API.API}/CatalogsClient/MasterOccupation/all/ComboBox`,
     POST_GET_FREQUENT_QUESTIONS: `${PORTS.ALPHA +
       API.ALPHA}/reviewTemplate/frequentQuestions`,
     POST_GET_PROFIT_LOSS: `${PORTS.ALPHA + API.ALPHA}/profitLoss`,

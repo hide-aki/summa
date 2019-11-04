@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { makeSelectDataProfile } from 'utils/selectors/dataUserProfileSelectors';
 import TabAccountData from './components/tabAccountData';
+import TabQuestionnaire from './components/tabQuestionnaire';
 import CardsAccountDocuments from './components/customDocumentsCards/cardsAccountDocuments';
 import TabsFormDataProfile from './components/customTabsFormDataProfile/tabsFormDataProfile';
+import {
+  selectMessages,
+  selectIdLanguage,
+} from '../../../containers/languageProvider/selectors';
 
 class Cuenta extends Component {
   constructor(props) {
@@ -66,6 +71,7 @@ class Cuenta extends Component {
         {/* <CardsAccountDocuments /> */}
 
         {/* <TabsFormDataProfile /> */}
+        <TabQuestionnaire messages={this.props.messages} isVisible={false} />
       </div>
     );
   }
@@ -73,6 +79,7 @@ class Cuenta extends Component {
 
 const mapStateToProps = createStructuredSelector({
   dataProfile: makeSelectDataProfile(),
+  messages: selectMessages(),
 });
 
 const mapDispatchToProps = (dispatch) => ({});

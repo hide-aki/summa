@@ -40,6 +40,16 @@ class SystemConfigurationsServices {
     }
   };
 
+  getAcceptTermsAndConditions = async (data = {}) => {
+    const endpoint = API_CONSTANTS.ALPHA.GET_TERMS_AND_CONDITIONS;
+    try {
+      const response = await this.requester.post(endpoint, data, this.headers);
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   getMenuTemplate = async (data = {}) => {
     const endpoint = API_CONSTANTS.ALPHA.GET_MENU_TEMPLATE;
     try {
