@@ -17,7 +17,7 @@ class Registry  extends Component {
             <Col sm="6" className="center bgPink bgTren">
               <h1 className="titleWhite">GET <br/>MONEY <br/> NOW</h1>
             </Col>
-            <Col sm="6" className="center bgWhite bgLogin">
+            <Col sm="6" className="center bgWhite bgLogin bgRegistry">
               <MainTitle title="Registro"/>
               <Container>
                 <Row>

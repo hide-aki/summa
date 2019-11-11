@@ -13,39 +13,16 @@
   color: $mainPink;
   font-weight: $fontWeight5;
   font-size: $fontFour;
-  @media screen and (max-width:414px){
+  @media screen and (max-width:$screenMobile){
     text-align: center;
   }
 }
-.mainTitle {
-  color: $mainPink;
-  font-weight: $fontWeightBold;
-  font-size: $fontSix;
-  padding: 15% 20% 10%;
-  @media screen and (max-width:768px){
-    font-size: $fontFive;
-    padding: 20% 0% 10%;
-  }
-  @media screen and (max-width:414px){
-    font-size: $fontFive;
-    padding: 20% 0% 10%;
-  }
-}
+
 .center{
   text-align: center;
 }
-.bgWhite{
-  background-color: $whiteColor;
-}
-.bgPink{
-  background-color: $mainPink;
-}
-.form {
-  padding: 0px 0px 50px;
-  @media screen and (max-width:768px){
-    padding: 0;
-}
-}
+
+
 /*----- MENÚ ------*/
 .app-header .navbar-brand {
     width: 200px;
@@ -82,7 +59,6 @@ html:not([dir="rtl"]) .sidebar {
 }
 .navExit{
     width: 250px;
-    // margin-top: 300%;
     position:absolute;
     left:0px;
     bottom:0px;
@@ -113,7 +89,7 @@ html:not([dir="rtl"]) .sidebar {
   margin: $five;
   width: $eighty;
   margin-left: $ten;
-  @media screen and (max-width:768px){
+  @media screen and (max-width:$screenIpad){
     font-size: $fontTwo;
     width: $eighty;
   }
@@ -128,10 +104,10 @@ html:not([dir="rtl"]) .sidebar {
 }
 .main .container-fluid {
   padding: 50px 120px 0px 100px;
-  @media screen and (max-width:1024px){
+  @media screen and (max-width:$screenMedium){
     padding: 30px;
   }
-  @media screen and (max-width:414px){
+  @media screen and (max-width:$screenMobile){
     padding: 10px;
   }
 }
@@ -149,10 +125,10 @@ html:not([dir="rtl"]) .sidebar {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  @media screen and (max-width:1024px){
+  @media screen and (max-width:$screenMedium){
     background-size:contain;
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:$screenIpad){
     background-position: bottom;
   }
 }

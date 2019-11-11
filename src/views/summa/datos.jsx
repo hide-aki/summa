@@ -141,11 +141,7 @@ class Datos extends Component {
             <Container>
               <Row>
                 <Col sm="12" md={{ size: 10, offset: 1 }} className="containerTab">
-                  <Card body>
-                    <CardTitle>Special Title Treatment</CardTitle>
-                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Go somewhere</Button>
-                  </Card>
+
                 </Col>
               </Row>
             </Container>

@@ -20,7 +20,7 @@ class recoverPass  extends Component {
                     {/* <img src={imgBg} alt="tren" className=""/> */}
                   </Col>
                   <Col sm="6" className="center bgWhite bgRecoverPass">
-                    <MainTitle title="¿Olvidaste tu contraseña?"/>
+                    <MainTitle title="¿Olvidaste tu contraseña?" className="mainTitleRP"/>
                     <h4 className="subtitle">Te mandaremos las instrucciones <br/> para recuperar tu contraseña</h4>
                     <Container>
                       <Row>
