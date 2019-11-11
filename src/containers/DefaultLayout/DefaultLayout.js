@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { push } from 'react-router-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { Container, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { MessagesFunctions, ALERT_TYPE } from '@pleedtech/pt-components';
@@ -38,6 +38,11 @@ import { selectToken } from '../../utils/selectors/dataUserProfileSelectors';
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 const DefaultAside = React.lazy(() => import('./DefaultAside'));
 const DefaultFooter = React.lazy(() => import('./DefaultFooter.1'));
+
+
+//menuSumma
+  // const [dropdownOpen, setOpen] = useState(false);
+  // const toggle = () => setOpen(!dropdownOpen);
 
 class DefaultLayout extends Component {
   constructor(props) {
@@ -312,10 +317,11 @@ class DefaultLayout extends Component {
               <AppSidebarHeader />
               <AppSidebarForm />
               <Suspense>
+                {/* <AppSidebarNav isOpen={true} navConfig={navAlpha} /> */}
                 {isNil(this.menu) === false && isEmpty(this.menu) === false ? (
                   <nav className="scrollbar-container barralateral sidebar-nav sidebar-nav- ps ps-container">
                     <ul className="nav">
-                      {this.menu.items.map((item, index) => {
+                      {navAlpha.map((item, index) => {
                         let content = null;
                         if (
                           isNil(item.title) === false &&
@@ -325,7 +331,8 @@ class DefaultLayout extends Component {
                         } else {
                           content = (
                             <li
-                              className={`${item.class} nav-item`}
+                              // className={`${item.class} nav-item`}
+                              className={`${item.class}`}
                               onClick={() => {
                                 if (item.isEnabled === true) {
                                   redirectTo(item.url);
@@ -354,7 +361,7 @@ class DefaultLayout extends Component {
               {/* <AppSidebarMinimizer /> */}
             </AppSidebar>
           )}
-          <main className="main alfa_main" style={{ marginTop: '20px' }}>
+          <main className="main alfa_main summaMain" style={{ marginTop: '20px' }}>
             {/* <AppBreadcrumb appRoutes={translateRoutes} /> */}
             <Container fluid>
               <Suspense fallback={this.loading()}>
@@ -373,7 +380,7 @@ class DefaultLayout extends Component {
                       />
                     ) : null;
                   })}
-                  <Redirect from="/" to="/login" />
+                  <Redirect from="/" to="/loginSumma/login" />
                 </Switch>
               </Suspense>
             </Container>

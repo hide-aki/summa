@@ -1,0 +1,145 @@
+.desktopLogin{
+    @media screen and (max-width:1024px){
+width: $one !important;
+flex: none;
+      }
+}
+/*---- LOGIN -----*/
+.titleWhite{
+  color: $whiteColor;
+  font-size: $fontSeven;
+  font-weight: $fontWeightBold;
+  padding: 25% 10% 20%;
+  text-align: right;
+  @media screen and (max-width:768px){
+    font-size: $fontSix;
+    padding: 35% 10% 20%;
+  }
+  @media screen and (max-width:414px){
+    font-size: $fontThree;
+    padding: 10% 10% 20%;
+  }
+}
+.inputLogin {
+  background-color: $lightGray;
+  border-radius: 5px;
+  color: $darkGray;
+  font-size: $fontTwo;
+  padding: 5px;
+  
+}
+.input-group-prepend {
+  padding: 10px;
+}
+.checkboxSumma {
+  color: $darkPink;
+  font-size: 1.2rem;
+  font-weight: $fontWeight6;
+  padding: $twenty;
+  margin-top: -15%;
+  @media screen and (max-width:768px){
+    font-size: $fontTwo;
+    padding: $ten;
+  }
+}
+.logoLogin{
+  padding: $ten;
+  width: $fifty;
+  @media screen and (max-width:768px){
+    padding: 0% 0% 20%;
+    width: 120px;
+  }
+}
+.bgTren{
+  background-image: url(../src/assets/img/summa/bgTren.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.bgLogin{
+  background-image: url(../src/assets/img/summa/bgLogin.jpg);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: contacoverin;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @media screen and (max-width:1024px){
+    background-image: none;
+    background-size: cover;
+  }
+}
+.imgLogin{
+  display: none;
+  @media screen and (max-width:1024px){
+    display: block;
+    margin-left: $twenty;
+    width: 200px;
+  }
+  @media screen and (max-width:768px){
+    display: block;
+    margin-left: $ten;
+    width: 150px;
+  }
+}
+
+/*---- RECOVER PASS -------*/
+.bgRecoverPass{
+  background-image: url(../src/assets/img/summa/bgRecoverPass.jpg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: cover;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width:1024px){
+    background-size: contain;
+  }
+}
+.subtitle {
+  padding-bottom: 10%;
+  color: $darkGray;
+  font-weight: $fontWeight6;
+  font-size: $fontThree;
+  @media screen and (max-width:768px){
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width:320px){
+    font-size: $fontTwo;
+  }
+}
+.formRecoverPass {
+  padding: 0px;
+}
+.logoRecoverPass {
+  padding: 30% 10% 10%;
+  width: 200px;
+  @media screen and (max-width:768px){
+    width: 120px;
+    padding: 10% 0% 20%;
+  }
+  @media screen and (max-width:768px){
+    width: 120px;
+    padding: 30% 0% 20%;
+  }
+}
+
+/*----- NEW PASS ----*/
+.formNewPass {
+  padding: 15px 0px 0px;
+}
+.imgNewPass{
+  padding: 0%;
+  @media screen and (max-width:1024px){
+    margin: 20% 0% 0%;
+    width: 200px;
+  }
+  @media screen and (max-width:768px){
+    width: 150px;
+  }
+}

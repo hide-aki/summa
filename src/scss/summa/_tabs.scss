@@ -1,0 +1,50 @@
+.nav-tabs {
+  border: none;
+  font-size: $fontTwo;
+  font-weight: $fontWeight4;
+  @media screen and (max-width:414px){
+    font-size: .9rem;
+  }
+  @media screen and (max-width:320px){
+    font-size: $fontOne;
+  }
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: $mainPink;
+  border: none;
+  border-bottom: medium solid $mainPink;
+}
+.nav-tabs .nav-link.active.nav-link.active:hover {
+  color: $mainPink;
+  border: none;
+  border-bottom: medium solid $mainPink;
+}
+.tab-content .tab-pane {
+  padding: $fontFive;
+  border: none;
+}
+.alfa_main .tab-content {
+  border: none;
+  background: unset;
+  border-top: 2px solid $lightGray;
+  padding-bottom: $twenty;
+  @media (min-width: 1024px){
+    margin-bottom: 0px;
+  }
+}
+.tab-content .tab-pane {
+  padding: 0 40px;
+  @media screen and (max-width:1024px){
+    margin: 0;
+    padding: 0;  
+  }
+}
+.containerTab {
+  margin: 10% 0% 0%;
+  padding: 0;
+}
+.containerTab2 {
+  margin: 0;
+  padding: 0;
+
+}

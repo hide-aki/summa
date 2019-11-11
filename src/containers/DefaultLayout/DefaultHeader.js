@@ -16,7 +16,8 @@ import {
   selectIdLanguage,
 } from '../languageProvider/selectors';
 import DefaultHeaderDropdown from './DefaultHeaderDropdown';
-import logo from '../../assets/img/brand/logo.png';
+// import logo from '../../assets/img/brand/logo.png';
+import logo from '../../assets/img/summa/brand/summaLogo.png';
 import logoXIC from '../../assets/img/brand/xic/alpha_xic.png';
 import sygnet from '../../assets/img/brand/sygnet.png';
 import sygnetXIC from '../../assets/img/brand/xic/alpha_icon_xic.png';
@@ -186,7 +187,7 @@ class DefaultHeader extends Component {
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
-          full={{ src: logo, width: 53, height: 50, alt: 'Logo' }}
+          full={{ src: logo, width: 100, height: 60, alt: 'Logo' }}
           minimized={{ src: sygnet, width: 30, height: 30, alt: 'Logo' }}
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />

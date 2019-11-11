@@ -17,6 +17,7 @@ const loading = () => (
     <div className="sk-spinner sk-spinner-pulse"></div>
   </div>
 );
+
 // Containers
 const DefaultLayout = Loadable({
   loader: () => import('./containers/DefaultLayout'),
@@ -25,16 +26,24 @@ const DefaultLayout = Loadable({
 
 // Pages
 const Login = Loadable({
-  loader: () => import('./views/Pages/Login'),
+  // loader: () => import('./views/Pages/Login'),
+  loader: () => import('./views/summa/login/login'),
+  loading,
+});
+
+const Registry = Loadable({
+  loader: () => import('./views/summa/login/registry'),
   loading,
 });
 
 const Recuperar_contraseña = Loadable({
-  loader: () => import('./views/alpha/recuperar_contraseña'),
+  // loader: () => import('./views/alpha/recuperar_contraseña'),
+  loader: () => import('./views/summa/login/recoverPass'),
   loading,
 });
 const Nueva_contraseña = Loadable({
-  loader: () => import('./views/alpha/nueva_contraseña'),
+  // loader: () => import('./views/alpha/nueva_contraseña'),
+  loader: () => import('./views/summa/login/newPass'),
   loading,
 });
 
@@ -53,8 +62,14 @@ class App extends Component {
             <Route path="/logout" component={Auth} />
             <Route path="/AuthUser/:id?" component={Auth} />
             <Route path="/crm/modules/AuthUser/:id?" component={Auth} />
-            <Route exact path="/" name="Login Page" component={Login} />
+            {/* <Route exact path="/" name="Login Page" component={Login} /> */}
             <Route exact path="/login" name="Login Page" component={Login} />
+            <Route
+              exact
+              path="/registry"
+              name="Registro"
+              component={Registry}
+            />
             <Route
               exact
               path="/recoverPass"
@@ -63,16 +78,22 @@ class App extends Component {
             />
             <Route
               exact
-              path="/recover/:idEmail?"
+              path="/newPass"
               name="Nueva contraseña"
               component={Nueva_contraseña}
             />
-            <Route
+            {/* <Route
+              exact
+              path="/recover/:idEmail?"
+              name="Nueva contraseña"
+              component={Nueva_contraseña}
+            /> */}
+            {/* <Route
               exact
               path="/recover/:idEmail?"
               name="Recuperar contraseña"
-              component={Nueva_contraseña}
-            />
+              component={Recuperar_contraseña}
+            /> */}
             <Route path="/" name="Home" component={DefaultLayout} />
             <Route path="/logout" component={Auth} />
             <Route path="/crm/modules/AuthUser/:id?" component={Auth} />
