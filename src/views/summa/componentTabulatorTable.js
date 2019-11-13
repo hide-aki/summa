@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import 'react-tabulator/lib/css/tabulator_modern.css';
+import 'react-tabulator/lib/css/tabulator.min.css';
 import { React15Tabulator } from 'react-tabulator';
 import moment from 'moment';
 
