@@ -1,59 +1,87 @@
 import React, { Component } from 'react';
 import Title from './title';
 import Buscar from './search';
-import { Container, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import {
+  Container,
+  TabContent,
+  TabPane,
+  Nav,
+  NavItem,
+  NavLink,
+  Row,
+  Col,
+  Alert,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from 'reactstrap';
 import classnames from 'classnames';
 import ReactTable from 'react-table';
+import CustomTabulatorTable from './componentTabulatorTable';
 import 'react-table/react-table.css';
 
-
-const data = [{
-    // detalles: <Button color="danger" onClick={this.state.toggle}>{buttonLabel}</Button>,
-    detalles: <i class="fa fa-eye" aria-hidden="true"></i>,
+const data = [
+  {
     numero: '00013',
     fecha: '18/10/2019',
     monto: '$100.00',
     metodo: 'Déposito en ventanilla',
-    estado: <Alert className="warningTable"><i class="fa fa-clock-o" aria-hidden="true"></i>  Pendiente</Alert>,
-  }]
-  
-  const columns = [{
-    Header: 'Detalles',
-    accessor: 'detalles' // String-based value accessors!
-  }, {
-    Header: 'No.',
-    accessor: 'numero',
-  },{
-    Header: 'Fecha de déposito',
-    accessor: 'fecha',
-  },{
-    Header: 'Monto',
-    accessor: 'monto',
-  },{
-    Header: 'Método',
-    accessor: 'metodo',
-  },{
-    Header: 'Estado',
-    accessor: 'estado',
-  }]
+    estado: 'Pendiente',
+  },
+  {
+    numero: '00011',
+    fecha: '18/11/2019',
+    monto: '$138.00',
+    metodo: 'Déposito',
+    estado: 'Completo',
+  },
+];
+
+const columns = [
+  {
+    rowHandle: true,
+    align: 'center',
+    formatter: () => {
+      return `<i class="fa fa-eye"></i>`;
+    },
+    headerSort: false,
+    width: 30,
+    minWidth: 30,
+  },
+  { title: 'No.', field: 'numero', width: 200 },
+  { title: 'Fecha de déposito', field: 'fecha' },
+  {
+    title: 'Monto',
+    field: 'monto',
+  },
+  {
+    title: 'Método',
+    field: 'metodo',
+  },
+  {
+    title: 'Estado',
+    field: 'estado',
+    formatter: (row, event) => {
+      const dataRow = row.getData().estado;
+      return `<div class="warningTable alert alert-success fade show" role="alert"><i class="fa fa-clock-o" aria-hidden="true"></i> ${dataRow}</div>`;
+    },
+  },
+];
 
 class Cuentas extends Component {
   constructor(props) {
     super(props);
-    this.state = {  
-      activeTab: "4",
-    }
+    this.state = {
+      activeTab: '4',
+    };
   }
-    
+
   render() {
+    const { activeTab } = this.state;
 
-    const {
-      activeTab,
-    } = this.state
-
-
-
-    return ( 
+    return (
       <div className="animated fadeIn">
         {/* <Modal isOpen={modal} toggle={this.state.toggle} className={className}>
           <ModalHeader toggle={this.state.toggle} close={closeBtn}>Modal title</ModalHeader>
@@ -70,18 +98,20 @@ class Cuentas extends Component {
           </ModalFooter>
         </Modal> */}
 
-        <Title title="Depósitos"/>
+        <Title title="Depósitos" />
         <Nav tabs>
           <NavItem>
             <NavLink
               className={classnames({ active: activeTab === '1' })}
               onClick={() => {
                 this.setState({
-                  activeTab: "1"
-                })
+                  activeTab: '1',
+                });
               }}
             >
-              <p className="center">Transferencia bancaría/Depósito en ventanilla</p>
+              <p className="center">
+                Transferencia bancaría/Depósito en ventanilla
+              </p>
             </NavLink>
           </NavItem>
           <NavItem>
@@ -89,8 +119,8 @@ class Cuentas extends Component {
               className={classnames({ active: activeTab === '2' })}
               onClick={() => {
                 this.setState({
-                  activeTab: "2"
-                })
+                  activeTab: '2',
+                });
               }}
             >
               <p className="center">Tarjeta de débito/Tarjeta de crédito</p>
@@ -101,8 +131,8 @@ class Cuentas extends Component {
               className={classnames({ active: activeTab === '3' })}
               onClick={() => {
                 this.setState({
-                  activeTab: "3"
-                })
+                  activeTab: '3',
+                });
               }}
             >
               <p className="center">Otras Opciones</p>
@@ -113,8 +143,8 @@ class Cuentas extends Component {
               className={classnames({ active: activeTab === '4' })}
               onClick={() => {
                 this.setState({
-                  activeTab: "4"
-                })
+                  activeTab: '4',
+                });
               }}
             >
               <p className="center">Detalle de déposito</p>
@@ -125,43 +155,42 @@ class Cuentas extends Component {
           <TabPane tabId="1">
             <Container>
               <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }}>
-                </Col>
+                <Col sm="12" md={{ size: 10, offset: 1 }}></Col>
               </Row>
             </Container>
           </TabPane>
           <TabPane tabId="2">
             <Container>
               <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }}>
-                </Col>
+                <Col sm="12" md={{ size: 10, offset: 1 }}></Col>
               </Row>
             </Container>
           </TabPane>
           <TabPane tabId="3">
             <Container>
               <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }}>
-                </Col>
+                <Col sm="12" md={{ size: 10, offset: 1 }}></Col>
               </Row>
             </Container>
           </TabPane>
-          <TabPane tabId="4">   
-          <Container>
-            <Row>
-              <Col sm="12" md={{ size: 12 }} className="center containerTab2">
-                <Buscar className="center"/>
-              </Col>
-            </Row>
-          </Container>
+          <TabPane tabId="4">
             <Container>
               <Row>
-                <Col sm="12" md={{ size: 12}} className="center containerTab2">
-                  <ReactTable
+                <Col sm="12" md={{ size: 12 }} className="center containerTab2">
+                  <Buscar className="center" />
+                </Col>
+              </Row>
+            </Container>
+            <Container>
+              <Row>
+                <Col sm="12" md={{ size: 12 }} className="center containerTab2">
+                  <CustomTabulatorTable
+                    id="table-tabulator-1"
+                    className=""
+                    isVisible
                     data={data}
                     columns={columns}
-                    className="-striped"
-                    defaultPageSize="4"
+                    options={{}}
                   />
                 </Col>
               </Row>
@@ -172,5 +201,5 @@ class Cuentas extends Component {
     );
   }
 }
- 
+
 export default Cuentas;
