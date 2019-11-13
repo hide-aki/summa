@@ -2,8 +2,6 @@
 .tabulator {
     border: none !important;
     font-size: 15px;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 .tabulator .tabulator-header {
     border-bottom: none;
@@ -45,4 +43,14 @@
     color: $whiteColor;
     text-align: center;
     font-size: $fontTwo;
+}
+.tabulator .tabulator-tableHolder {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    @media screen and (max-width:$screenMedium){
+        overflow: auto !important;
+        overflow-x: auto !important;
+        overflow-y: auto !important;
+      }
 }
