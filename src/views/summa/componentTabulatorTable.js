@@ -19,4 +19,5 @@ const CustomTabulatorTable = (props) => {
   return component;
 };
 
+
 export default CustomTabulatorTable;

@@ -186,7 +186,7 @@ class Cuentas extends Component {
                 <Col sm="12" md={{ size: 12 }} className="center containerTab2">
                   <CustomTabulatorTable
                     id="table-tabulator-1"
-                    className=""
+                    className="tabulatorTable"
                     isVisible
                     data={data}
                     columns={columns}
