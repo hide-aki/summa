@@ -38,12 +38,6 @@
 .tabulator-row .tabulator-cell {
     font-size: 1rem;
 }
-.warningTable {
-    background: $yellow;
-    color: $whiteColor;
-    text-align: center;
-    font-size: $fontTwo;
-}
 .tabulator .tabulator-tableHolder {
     overflow: hidden !important;
     overflow-x: hidden !important;
@@ -53,4 +47,42 @@
         overflow-x: auto !important;
         overflow-y: auto !important;
       }
+}
+
+// TABULATOR ELEMENTS
+.item-btn {
+    display: inline-block;
+}
+.item-btn .btn-icon-edit {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: $mainPink;
+    opacity: 1;
+    border: 0 !important;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    cursor: hand;
+}
+.item-btn .btn-icon-edit:hover {
+    opacity: .9;
+    background-color: transparent;
+    color: $mainPink;
+}
+button:not(:disabled):not(.disabled):active{
+    color: $blackColor;
+    background-color: inherit;
+    border-color: inherit;
+}
+button:focus {
+    outline: none !important;
+    outline-color: none !important;
+}
+.warningTable {
+    background: $yellow;
+    color: $whiteColor;
+    text-align: center;
+    font-size: $fontTwo;
+    padding: 5px 0px 5px 0px;
 }

@@ -43,13 +43,21 @@ const columns = [
   {
     rowHandle: true,
     align: 'center',
-    formatter: () => {
-      return `<i class="fa fa-eye"></i>`;
-    },
+    // formatter: () => {
+    //   return `<i class="fa fa-eye"></i>`;
+    // },
     headerSort: false,
     width: 30,
     minWidth: 30,
   },
+  { 
+    title: 'Detalles', 
+    field: '', 
+    width: 100, 
+    formatter: () => {
+      return `<div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-eye"></i></button></div>`;
+    }},
+
   { title: 'No.', field: 'numero', width: 200 },
   { title: 'Fecha de déposito', field: 'fecha' },
   {
