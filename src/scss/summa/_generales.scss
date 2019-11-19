@@ -1,0 +1,134 @@
+
+/*---------- GENERALES --------*/
+.alfa_footer {
+  display: none;
+}
+.barralateral {
+    background-color: $lightGray;
+}
+.tab-content {
+  padding-bottom: $fifteen !important;
+}
+.title{
+  color: $mainPink;
+  font-weight: $fontWeight5;
+  font-size: $fontFour;
+  @media screen and (max-width:$screenMobile){
+    text-align: center;
+  }
+}
+
+.center{
+  text-align: center;
+}
+
+
+/*----- MENÚ ------*/
+.app-header .navbar-brand {
+    width: 200px;
+    padding: 0;
+}
+.nav-link-bb{
+  color: $mainPink;
+}
+.nav-link-bb:hover{
+    color: $whiteColor;
+    background-color: $mainPink !important;
+  }
+.sidebar .nav-link.active {
+    background: $mainPink;
+}
+.sidebar .nav {
+    width: 250px;
+}
+.sidebar .sidebar-nav {
+    width: 250px;
+}
+.barralateral .nav-link .nav-icon {
+    color: $mainPink;
+}
+.barralateral .nav-link.active .nav-icon {
+    background-color: $mainPink;
+    color: $whiteColor;
+}
+.nav-icon:hover{
+    color: $whiteColor !important;
+}
+html:not([dir="rtl"]) .sidebar {
+    margin-left: -250px;
+}
+.navExit{
+    width: 250px;
+    position:absolute;
+    left:0px;
+    bottom:0px;
+}
+.navExit, .fa-sign-out{
+    background-color: $mainPink;
+    color: $whiteColor !important;
+}
+
+.sidebar .sidebar-minimizer {
+    color: $whiteColor !important;
+    background-color: $mainPink !important;
+}
+.subMenu{
+    color: $whiteColor;
+    background-color: $darkGray;
+    margin-left: 20px !important;
+}
+.barralateral .subMenu .nav-link .nav-icon {
+    color: $whiteColor;
+}
+/*------------------*/
+.btnSumma{
+  background-color: $mainPink;
+  color: $whiteColor;
+  font-size: $fontTwo;
+  border-radius: 20px;
+  margin: $five;
+  width: $eighty;
+  margin-left: $ten;
+  @media screen and (max-width:$screenIpad){
+    font-size: $fontTwo;
+    width: $eighty;
+  }
+}
+.searchSumma{
+  margin: 50px 60px 50px;
+  width: $ninety;
+  padding: 5px;;
+  border-radius: 5px;
+  border: .5px solid;
+  margin-left: $five;
+}
+.main .container-fluid {
+  padding: 50px 120px 0px 100px;
+  @media screen and (max-width:$screenMedium){
+    padding: 30px;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding: 10px;
+  }
+}
+.summaMain{
+  background-image: url(../src/assets/img/summa/bgSumma.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: right;
+  background-position-y: bottom;
+  position: relative;
+  width: $one;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width:$screenMedium){
+    background-size:contain;
+  }
+  @media screen and (max-width:$screenIpad){
+    background-position: bottom;
+  }
+}

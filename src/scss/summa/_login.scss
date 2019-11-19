@@ -1,0 +1,213 @@
+.containerRespon{
+  max-width: $one;
+  height: 100vh;
+  padding: 0%;
+}
+.mainTitle {
+  color: $mainPink;
+  font-weight: $fontWeightBold;
+  font-size: $fontSix;
+  padding: 15% 20% 10%;
+  @media screen and (max-width:$screenMedium){
+    font-size: $fontFive;
+    padding: 50% 0% 10%;
+  }
+  @media screen and (max-width:$screenIpad){
+    font-size: $fontFive;
+  }
+  @media screen and (max-width:$screenMobile){
+    font-size: $fontFive;
+    padding: 10% 0% 5%;
+  }
+}
+.bgWhite{
+  background-color: $whiteColor;
+  height: 100vh;
+  @media screen and (max-width:$screenMobileXs){
+    height: 110vh;
+  }
+}
+.bgPink{
+  background-color: $mainPink;
+  height: 100vh;
+  @media screen and (max-width:$screenMobile){
+    height: 25vh;
+  }
+}
+/*---- LOGIN -----*/
+.titleWhite{
+  color: $whiteColor;
+  font-size: $fontSeven;
+  font-weight: $fontWeightBold;
+  padding: 25% 10% 20%;
+  text-align: right;
+  @media screen and (max-width:$screenMedium){
+    font-size: $fontSix;
+    padding: 50% 10% 20%;
+  }
+  @media screen and (max-width:$screenIpad){
+    padding: 65% 10% 20%;
+  }
+  @media screen and (max-width:$screenMobile){
+    font-size: $fontThree;
+    padding: 10% 10% 20%;
+  }
+}
+.form {
+  padding: 0px 0px 50px;
+  @media screen and (max-width:$screenIpad){
+    margin: 0;
+    padding: 0;
+}
+}
+.inputLogin {
+  background-color: $lightGray;
+  border-radius: 5px;
+  color: $darkGray;
+  font-size: $fontTwo;
+  padding: 5px;
+  
+}
+.input-group-prepend {
+  padding: 10px;
+}
+.checkboxSumma {
+  color: $darkPink;
+  font-size: 1.2rem;
+  font-weight: $fontWeight6;
+  padding: $twenty;
+  margin-top: -15%;
+  @media screen and (max-width:$screenMedium){
+    font-size: $fontTwo;
+    padding: 5%;
+  }
+  @media screen and (max-width:$screenIpad){
+    padding: $ten;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    padding: 0;
+  }
+}
+.logoLogin{
+  padding: $ten;
+  width: $fifty;
+  @media screen and (max-width:$screenMedium){
+    padding: 20% 0% 30%;
+    width: 120px;
+  }
+  @media screen and (max-width:$screenIpad){
+    padding: 0% 0% 10%;
+    width: 120px;
+  }
+}
+.bgTren{
+  background-image: url(../src/assets/img/summa/bgTren.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.bgLogin{
+  background-image: url(../src/assets/img/summa/bgLogin.jpg);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: contacoverin;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @media screen and (max-width:$screenMedium){
+    background-image: none;
+    background-size: cover;
+  }
+}
+.imgLogin{
+  display: none;
+  @media screen and (max-width:$screenMedium){
+    display: block;
+    margin-left: 15%;
+    width: 250px;
+  }
+  @media screen and (max-width:$screenIpad){
+    display: block;
+    margin: 0% 0% 10%;
+    margin-left: $five;
+    width: 200px;
+  }
+  @media screen and (max-width:$screenMobile){
+    display: block;
+    margin-left: 25%;
+    width: 150px;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    display: block;
+    margin: 0% 0% 0% 25%;
+  }
+}
+/*----- REGISTRY ----------*/
+.bgRegistry {
+  background-image: none;
+  background-size: cover;
+  height: 100vh;
+  @media screen and (max-width:$screenMobile){
+    height: 110vh;
+  }
+}
+
+/*---- RECOVER PASS -------*/
+.bgRecoverPass{
+  background-image: url(../src/assets/img/summa/bgRecoverPass.jpg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: cover;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width:$screenMedium){
+    background-size: contain;
+  }
+}
+.mainTitleRP {
+  padding: 20% 0% 5%;
+}
+.subtitle {
+  padding-bottom: $ten;
+  color: $darkGray;
+  font-weight: $fontWeight6;
+  font-size: $fontThree;
+  @media screen and (max-width:$screenIpad){
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    font-size: $fontTwo;
+  }
+}
+.formRecoverPass {
+  padding: 0px;
+}
+.logoRecoverPass {
+  padding: 30% 10% 10%;
+  width: 200px;
+  @media screen and (max-width:$screenIpad){
+    width: 120px;
+    padding: 10% 0% 20%;
+  }
+}
+
+/*----- NEW PASS ----*/
+.formNewPass {
+  padding: 15px 0px 0px;
+}
+.imgNewPass{
+  padding: 0%;
+  @media screen and (max-width:$screenMedium){
+    margin: 20% 0% 0%;
+    width: 200px;
+  }
+  @media screen and (max-width:$screenIpad){
+    width: 150px;
+  }
+}

@@ -10,24 +10,63 @@ export default [
     class: '', // optional class names space delimited list for title item ex: "text-center"
   },
   {
-    name: 'Cuenta',
-    url: '/cuenta',
-    icon: 'icon-user',
+    name: 'CUENTA',
+    url: '/datos',
+    icon: 'fa fa-user',
+    class: 'nav-link-bb',
+    children:[
+      {
+        name: 'Validación de correo',
+        url: '/',
+        icon: 'fa fa-info-circle',
+        class: 'nav-link-bb subMenu',
+        isEnabled: true,
+      },
+    ]
+  },
+  // Submenu de "CUENTA"
+  {
+    name: 'Datos Generales',
+    url: '/',
+    icon: 'fa fa-adjust',
+    class: 'nav-link-bb subMenu',
+    isEnabled: true,
+  },
+  {
+    name: 'Terminos y condiciones',
+    url: '/',
+    icon: 'fa fa-check-square',
+    class: 'nav-link-bb subMenu',
+    isEnabled: true,
+  },
+  {
+    name: 'Documentación',
+    url: '/',
+    icon: 'fa fa-file',
+    class: 'nav-link-bb subMenu',
+    isEnabled: true,
+  },
+  // Termina submenu de "CUENTA"
+  {
+    name: 'OPERACIONES',
+    url: '/cuentas',
+    icon: 'fa fa-money',
+    class: 'nav-link-bb',
+    icon: 'fa fa-money',
+    isEnabled: true,
+  },
+  {
+    name: 'BALANCE',
+    url: '/balance',
+    icon: 'fa fa-line-chart',
     class: 'nav-link-bb',
     isEnabled: true,
   },
   {
-    name: 'Depósitos',
-    url: '/depositos',
-    icon: 'cui-credit-card',
-    class: 'nav-link-bb',
-    isEnabled: true,
-  },
-  {
-    name: 'Cerrar sesión',
+    name: 'SALIR',
     url: '/logout',
-    icon: 'icon-close',
-    class: 'nav-link-bb',
+    icon: 'fa fa-sign-out',
+    class: 'nav-link-bb navExit',
     isEnabled: true,
   },
 ];

@@ -10,6 +10,9 @@ const Privacidad = React.lazy(() => import('./views/alpha/privacidad'));
 const Condiciones = React.lazy(() => import('./views/alpha/condiciones'));
 const Dashboard = React.lazy(() => import('./views/alpha/dashboard/dashboard'));
 const FAQ = React.lazy(() => import('./views/alpha/FAQ/faq'));
+// vistas summa
+const Datos = React.lazy(() => import('./views/summa/datos'));
+const Cuentas = React.lazy(() => import('./views/summa/cuentas'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -22,6 +25,9 @@ const routes = [
   { path: '/condiciones', name: 'Condiciones', component: Condiciones },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/faq', name: 'FAQ', component: FAQ },
+  //vistas summa
+  { path: '/datos', name: 'Datos', component: Datos },
+  { path: '/cuentas', name: 'Cuentas', component: Cuentas },
 ];
 
 export default routes;

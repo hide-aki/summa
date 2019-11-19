@@ -198,25 +198,25 @@ body {
 .alfa_main .ReactTable .rt-tbody .rt-td {
   border-right: 1px solid rgba(0, 0, 0, 0.09);
 }
-.barralateral .nav-link.active .nav-icon {
-  color: $cabinet-color;
-}
+// .barralateral .nav-link.active .nav-icon {
+//   color: $cabinet-color;
+// }
 
 .barralateral .nav-link:hover {
   color: #000;
   background-color: rgba(255, 255, 255, 0.269);
 }
 
-.alfa_main .btn-link:hover {
-  color: $cabinet-color;
-  text-decoration: none;
-}
+// .alfa_main .btn-link:hover {
+//   color: $cabinet-color;
+//   text-decoration: none;
+// }
 
 .alfa_main .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: $cabinet-color;
-  border-color: $cabinet-color;
+  // background-color: $cabinet-color;
+  // border-color: $cabinet-color;
 }
 .alfa_main .page-link {
   position: relative;
