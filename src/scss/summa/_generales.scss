@@ -17,10 +17,52 @@
     text-align: center;
   }
 }
-
 .center{
   text-align: center;
 }
+.liTerminos{list-style:none;}
+.btnSec{
+  border: 1px solid $mainPink;
+  background-color: inherit;
+  color: $mainPink;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 5%;
+  width: 60%;
+  padding: 5px;
+}
+.btnSec:hover{
+  background-color: $mainPink;
+  color: $whiteColor;
+}
+.btnMain{
+  background-color: $mainPink;
+  color: $whiteColor;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 5%;
+  width: 60%;
+  padding: 5px;
+}
+.btnMain:hover{
+  border: 1px solid $mainPink;
+  background-color: $lightGray;
+  color: $mainPink;
+}
+.btnGeneral{
+  background-color: $mainPink;
+  color: $whiteColor;
+  font-size: $fontOne;
+  border-radius: 10px;
+  width: 20%;
+  padding: 5px;
+}
+.btnGeneral:hover{
+  border: 1px solid $mainPink;
+  background-color: $lightGray;
+  color: $mainPink;
+}
+.MessageText{margin: 5% 0% 5% 0%;}
 
 
 /*----- MENÚ ------*/
@@ -131,4 +173,22 @@ html:not([dir="rtl"]) .sidebar {
   @media screen and (max-width:$screenIpad){
     background-position: bottom;
   }
+}
+
+/*------ CUENTAS -----*/
+.custom-file-label::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: block;
+  height: calc(1.5em + 0.75rem);
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  color: $whiteColor;
+  content: "MXN";
+  background-color: $mainPink;
+  border-left: inherit;
+  border-radius: 0 0.25rem 0.25rem 0;
 }

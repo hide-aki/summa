@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MainTitle from '../mainTitle';
+import MainTitle from '../components/mainTitle';
 import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, FormGroup, Label } from 'reactstrap';
 import imgLogin from '../../../assets/img/summa/imgLogin.jpg';
 import logo from '../../../assets/img/summa/logo.png';

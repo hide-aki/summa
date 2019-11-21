@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Title from './title';
+import Title from './components/title';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
 import classnames from 'classnames';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
