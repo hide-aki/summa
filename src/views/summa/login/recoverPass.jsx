@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import MainTitle from '../mainTitle';
+import MainTitle from '../components/mainTitle';
 import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, FormGroup, Label } from 'reactstrap';
 import imgBg from '../../../assets/img/summa/tren3.png';
 import logo from '../../../assets/img/summa/logo.png';
+import BtnText from '../components/btnText';
 
 class recoverPass  extends Component {
     constructor(props) {
@@ -34,6 +35,9 @@ class recoverPass  extends Component {
                           <br/>
                           <div>
                             <Button className="btnSumma" size="lg" block>Envìar</Button>
+                          </div> 
+                          <div>
+                            <BtnText title="Cancelar" className="btnTxt"/>
                           </div> 
                           <img src={logo} alt="logo" className="logoRecoverPass"/>
                         </Col>

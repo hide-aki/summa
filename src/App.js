@@ -46,11 +46,25 @@ const Nueva_contraseña = Loadable({
   loader: () => import('./views/summa/login/newPass'),
   loading,
 });
+const Message_Success = Loadable({
+  loader: () => import('./views/summa/login/messageSuccess'),
+  loading,
+});
+const Message_Error = Loadable({
+  loader: () => import('./views/summa/login/messageError'),
+  loading,
+});
+const Message_Expired = Loadable({
+  loader: () => import('./views/summa/login/messageExpired'),
+  loading,
+});
+
 
 const Auth = Loadable({
   loader: () => import('./containers/authUser'),
   loading,
 });
+
 
 class App extends Component {
   render() {
@@ -81,6 +95,24 @@ class App extends Component {
               path="/newPass"
               name="Nueva contraseña"
               component={Nueva_contraseña}
+            />
+            <Route
+              exact
+              path="/messageSuccess"
+              name="Mensaje Exitoso"
+              component={Message_Success}
+            />
+            <Route
+              exact
+              path="/messageError"
+              name="Mensaje Error"
+              component={Message_Error}
+            />
+            <Route
+              exact
+              path="/messageExpired"
+              name="Mensaje Link Expirado"
+              component={Message_Expired}
             />
             {/* <Route
               exact

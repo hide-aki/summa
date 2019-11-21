@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import MainTitle from '../mainTitle';
-import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, FormGroup, Label } from 'reactstrap';
+import MainTitle from '../components/mainTitle';
+import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, FormGroup, Label, Form } from 'reactstrap';
 import imgLogin from '../../../assets/img/summa/imgLogin.jpg';
 import logo from '../../../assets/img/summa/logo.png';
+import BtnText from '../components/btnText';
 
 class Login  extends Component {
   constructor(props) {
@@ -34,16 +35,18 @@ class Login  extends Component {
                           <Input className="inputLogin" placeholder="Contraseña" />
                         </InputGroup>
                       </form>
-                      <br/>
-                      <div>
-                        <Button className="btnSumma" size="lg" block>Entrar</Button>
-                        <br/>
-                        <FormGroup check>
+                      <Form>
+                      <FormGroup check>
                           <Label className="checkboxSumma" check>
                             <Input type="checkbox"/>
                             Remember Me
                           </Label>
                         </FormGroup>
+                        </Form>
+                      <br/>
+                      <div>
+                        <Button className="btnSumma" size="lg" block>Entrar</Button>
+                        <p>¿Olvidaste tu contraseña? <BtnText title="Haz click Aquí" className="btnTxt"/> </p>
                       </div> 
                       <div><img src={imgLogin} alt="logo" className="imgLogin center"/></div>
                       <div><img src={logo} alt="logo" className="logoLogin"/></div>

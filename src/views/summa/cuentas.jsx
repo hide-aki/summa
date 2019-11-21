@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Title from './title';
-import Buscar from './search';
+import Title from './components/title';
+import Buscar from './components/search';
+import BtnGeneral from './components/btnGeneral';
+import MainTitle2 from './components/mainTitle2';
+import logo from '../../assets/img/summa/logo.png';
 import {
   Container,
   TabContent,
@@ -16,11 +19,19 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  InputGroup, 
+  InputGroupAddon, 
+  Input, 
+  FormGroup, 
+  Label,
+  CustomInput,
+  Form,
 } from 'reactstrap';
 import classnames from 'classnames';
 import ReactTable from 'react-table';
 import CustomTabulatorTable from './componentTabulatorTable';
 import 'react-table/react-table.css';
+ 
 
 const data = [
   {
@@ -78,33 +89,41 @@ const columns = [
   },
 ];
 
+
 class Cuentas extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeTab: '4',
+      modal: false,
     };
+  }
+
+  toggle=()=>{
+    this.setState({
+      modal: !this.state.modal
+    })
   }
 
   render() {
     const { activeTab } = this.state;
 
+
     return (
       <div className="animated fadeIn">
-        {/* <Modal isOpen={modal} toggle={this.state.toggle} className={className}>
-          <ModalHeader toggle={this.state.toggle} close={closeBtn}>Modal title</ModalHeader>
-          <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.state.toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={this.state.toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal> */}
+        
+        <div>
+          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+            <ModalHeader>Modal title</ModalHeader>
+            <ModalBody>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+              <Button color="secondary" onClick={""}>Cancel</Button>
+            </ModalFooter>
+          </Modal>
+        </div>
 
         <Title title="Depósitos" />
         <Nav tabs>
@@ -162,15 +181,138 @@ class Cuentas extends Component {
         <TabContent activeTab={activeTab}>
           <TabPane tabId="1">
             <Container>
-              <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }}></Col>
+            <Row>
+                <Col sm="12" md={{ size: 12}}>
+                  <p className="MessageText">Para realizar un depósito mediante transferencia bancaria o deposito en ventanilla, puede realizarlo con los datos que a continuación le proporcionamos, por favor indique el monto y la opción deseada:</p>
+                  {/* Este formulario es el primero que se muestra dentro de esta sección */}
+                  <Container>
+                    <Row>
+                      <Col sm="12" md={{ size: 10, offset: 1}}>
+                        <Form>
+                          <p>Monto</p>
+                          <FormGroup>
+                            <Label for="exampleMonto" className="custom-file-label"></Label>
+                            <Input type="text" name="monto" id="exampleMonto" placeholder="0.00"/>
+                          </FormGroup>
+                          <br/>
+                          <Row>
+                            <Col>
+                              <p>Tipo de transacción</p>
+                              <FormGroup row>
+                                <Col sm="12">
+                                  <Input type="select" name="select" id="exampleSelect">
+                                    <option>Transferencia Nacional</option>
+                                    <option>Transferencia Internacional</option>
+                                    <option>Depósito en Ventanilla</option>
+                                  </Input>
+                                </Col>
+                              </FormGroup>
+                            </Col>
+                            <Col>
+                              <p>Cuenta</p>
+                              <FormGroup row>
+                                <Col sm="12">
+                                  <Input type="select" name="select" id="exampleSelect">
+                                    <option>Santander USD</option>
+                                    <option>Santander MXN</option>
+                                  </Input>
+                                </Col>
+                              </FormGroup>
+                            </Col>
+                          </Row>
+                        </Form>
+                        <br/><br/><br/>
+                        {/* Todos los datos a continuación agregado en <p> aparecen solo hasta que se ha elegido el tipo de cuenta */}
+                        <Row>
+                          <Col>
+                            <h6>Nombre del beneficiario</h6>
+                            <p>YOURPAYCHOICE SA de CV</p>
+                            <br/><br/>
+                          </Col>
+                          <Col>
+                            <h6>Banco beneficiario</h6>
+                            <p>Santander MXN</p>
+                            <br/><br/>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <h6>Dirección del banco beneficiario</h6>
+                            <p>Av. Insurgentes Sur 859 piso 2 ofna 249 Col. Nápoles Delegación Benito Juárez, CDMX CP 03810</p>
+                            <br/><br/>
+                          </Col>
+                          {/* El número de cuenta solo aparece si es transferencia nacional */}
+                          <Col>
+                            <h6>No. de Cuenta</h6>
+                            <p>65-50581142-9</p>
+                            <br/><br/>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <h6>CLABE</h6>
+                            <p>014180655058114296</p>
+                            <br/><br/>
+                          </Col>
+                          <Col>
+                          </Col>
+                        </Row>
+                        <BtnGeneral className="btnTarjeta" title="Generar movimiento"/>
+                      </Col>
+                    </Row>
+                  </Container>
+                </Col>
               </Row>
             </Container>
           </TabPane>
           <TabPane tabId="2">
             <Container>
               <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }}></Col>
+                <Col sm="12" md={{ size: 12}}>
+                  <p className="MessageText">Para realizar un pago con tarjeta de crédito o débito, utilice nuestra terminal en línea indicando monto, referencia y dando clic en el botón YPC:</p>
+                  {/* Este formulario es el primero que se muestra dentro de esta sección */}
+                  <Container>
+                    <Row>
+                      <Col sm="12" md={{ size: 10, offset: 1}}>
+                        <Form>
+                          <p>Monto</p>
+                          <FormGroup>
+                            <Label for="exampleMonto" className="custom-file-label"></Label>
+                            <Input type="text" name="monto" id="exampleMonto" placeholder=""/>
+                          </FormGroup>
+                          <br/>
+                          <p>Referencia</p>
+                          <FormGroup>
+                            {/* <Label for="exampleReferencia">Referencia</Label> */}
+                            <Input type="text" name="referencia" id="exampleReferencia" placeholder=""/>
+                          </FormGroup>
+                        </Form>
+                        <br/>
+                        <BtnGeneral className="btnTarjeta" title="Siguiente"  onClick={()=>{ this.props.closeDrawer()}}/>
+                      </Col>
+                    </Row>
+                  </Container>
+                  <br/><br/><br/>
+                  {/* Despues de dar click en el boton del formulario anterior se esconde el primer formulario y se muestra este */}
+                  <Container>
+                    <Row>
+                      <Col sm="12" md={{ size: 10, offset: 1}}>
+                        <div><img src={logo} alt="logo" className="logoMessa center"/></div>
+                        <FormGroup>
+                          <Label for="exampleUsuario">Usuario</Label>
+                          <Input type="text" name="usuario" id="exampleUsuario" placeholder=""/>
+                        </FormGroup>
+                        <br/>
+                        <FormGroup>
+                          <Label for="examplePassword">Contraseña</Label>
+                          <Input type="password" name="password" id="examplePassword" placeholder=""/>
+                        </FormGroup>
+                        <br/>
+                        <BtnGeneral className="btnTarjeta center" title="Iniciar Sesión"/>
+                      </Col>
+                    </Row>
+                  </Container>
+                </Col>
               </Row>
             </Container>
           </TabPane>
@@ -185,7 +327,7 @@ class Cuentas extends Component {
             <Container>
               <Row>
                 <Col sm="12" md={{ size: 12 }} className="center containerTab2">
-                  <Buscar className="center" />
+                  <Buscar className="center"/>
                 </Col>
               </Row>
             </Container>
@@ -200,6 +342,7 @@ class Cuentas extends Component {
                     columns={columns}
                     options={{}}
                   />
+                  <Button color="danger" onClick={this.toggle}>MODAL</Button>
                 </Col>
               </Row>
             </Container>

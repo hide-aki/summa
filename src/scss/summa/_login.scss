@@ -20,6 +20,23 @@
     padding: 10% 0% 5%;
   }
 }
+.mainTitle2 {
+  color: $mainPink;
+  font-weight: $fontWeightBold;
+  font-size: $fontSix;
+  @media screen and (max-width:$screenMedium){
+    font-size: $fontFive;
+  }
+  @media screen and (max-width:$screenIpad){
+    font-size: $fontFive;
+  }
+  @media screen and (max-width:$screenMobile){
+    font-size: $fontFive;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    font-size: $fontFour;
+  }
+}
 .bgWhite{
   background-color: $whiteColor;
   height: 100vh;
@@ -34,6 +51,7 @@
     height: 25vh;
   }
 }
+// .bgMess{filter: blur(5px);}
 /*---- LOGIN -----*/
 .titleWhite{
   color: $whiteColor;
@@ -75,7 +93,7 @@
   color: $darkPink;
   font-size: 1.2rem;
   font-weight: $fontWeight6;
-  padding: $twenty;
+  // padding: $twenty;
   margin-top: -15%;
   @media screen and (max-width:$screenMedium){
     font-size: $fontTwo;
@@ -188,6 +206,22 @@
 .formRecoverPass {
   padding: 0px;
 }
+.btnTxt {
+  color: $mainPink;
+  font-size: $fontTwo;
+  font-weight: $fontWeight6;
+  border: none !important;
+  background-color: inherit !important;
+  @media screen and (max-width:$screenMedium){
+    font-size: $fontTwo;
+  }
+  @media screen and (max-width:$screenIpad){
+    padding: $ten;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    padding: 0;
+  }
+}
 .logoRecoverPass {
   padding: 30% 10% 10%;
   width: 200px;
@@ -210,4 +244,49 @@
   @media screen and (max-width:$screenIpad){
     width: 150px;
   }
+}
+
+/*----- MESSAGE SUCCESS ------*/
+.jumbotronSumma{
+  background-color: $whiteColor;
+  border-radius: 30px;
+  width: 60%;
+  margin-top: 20%;
+  margin-left: 20%;
+  padding: 5% 0% 2% 0% !important;
+  @media screen and (max-width:$screenMedium){
+    margin-top: 40%;
+  }
+  @media screen and (max-width:$screenIpad){
+    width: 80%;
+    margin-left: 10%;
+  }
+  @media screen and (max-width:$screenMobile){
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 50%;
+    padding: 8% 0% 5% 0% !important;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 50%;
+    padding: 10% 0% 8% 0% !important;
+  }
+}
+.lead{margin-top: 30px;}
+.bgMess{
+  background-image: url(../src/assets/img/summa/bgTrenBlur2.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: $mainPink;
+  height: 100vh;
+}
+.logoMessa{
+  margin-bottom: 55px;
+  width: 150px;
 }
