@@ -361,7 +361,8 @@ class DefaultLayout extends Component {
               {/* <AppSidebarMinimizer /> */}
             </AppSidebar>
           )}
-          <main className="main alfa_main summaMain" style={{ marginTop: '20px' }}>
+          <main className="main alfa_main" style={{ marginTop: '20px' }}>
+            {/* <div className="bgMain"></div> */}
             {/* <AppBreadcrumb appRoutes={translateRoutes} /> */}
             <Container fluid>
               <Suspense fallback={this.loading()}>

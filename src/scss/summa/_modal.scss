@@ -1,0 +1,75 @@
+.modalHeader{
+    background-color: $mainPink !important;
+    display: flex;
+}
+.titleModal {
+    color: $whiteColor !important;
+    padding-left: 10px;
+}
+.bodyModal{
+    padding: 5%;
+}
+.footerModal{
+    text-align: center !important;
+}
+.modal-footer {
+    display: block !important;
+}
+.archivoModal{
+    border: 1px solid pink;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 6%;
+    @media screen and (max-width:$screenMobile){
+        margin-left: -3%;
+      }
+}
+.archivoModal2{
+    border: 1px solid pink;
+    padding: 10px;
+    border-radius: 10px;
+    @media screen and (max-width:$screenMobile){
+        margin-left: -3%;
+      }
+}
+.btnIcon {
+    color: $mainPink; 
+    background-color: inherit !important; 
+    border: none !important; 
+}
+.btnIcon:hover {
+    color: $blackColor; 
+    background-color: inherit !important; 
+    border: none !important; 
+}
+.btnIcon:active {
+    color: $blackColor; 
+    background-color: inherit !important; 
+    border: none !important; 
+}
+.file{width: 50px;}
+.infoText{
+    vertical-align: middle;
+    margin-top: 10%;
+}
+.completo {
+    background: $warningGreen;
+    color: $whiteColor;
+    text-align: center;
+    font-size: $fontTwo;
+    padding: 5px 0px 5px 0px;
+}
+.incompleto {
+    background: $warningYellow;
+    color: $whiteColor;
+    text-align: center;
+    font-size: $fontTwo;
+    padding: 5px 0px 5px 0px;
+}
+.vacio {
+    background: $warningPink;
+    color: $whiteColor;
+    text-align: center;
+    font-size: $fontTwo;
+    padding: 5px 0px 5px 0px;
+}

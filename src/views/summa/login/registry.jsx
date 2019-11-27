@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MainTitle from '../components/mainTitle';
+import BtnMain from '../components/btnMain';
 import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, FormGroup, Label } from 'reactstrap';
 import imgLogin from '../../../assets/img/summa/imgLogin.jpg';
 import logo from '../../../assets/img/summa/logo.png';
@@ -24,6 +25,16 @@ class Registry  extends Component {
                   <Col sm="12" md={{ size: 8, offset: 2 }}>
                     <form className="form">
                       <InputGroup className="inputLogin">
+                        <InputGroupAddon addonType="prepend"><i class="fa fa-user"></i></InputGroupAddon>
+                        <Input className="inputLogin" placeholder="Nombre" />
+                      </InputGroup>
+                      <br/>
+                      <InputGroup className="inputLogin">
+                        <InputGroupAddon addonType="prepend"><i class="fa fa-user"></i></InputGroupAddon>
+                        <Input className="inputLogin" placeholder="Apellido" />
+                      </InputGroup>
+                      <br/>
+                      <InputGroup className="inputLogin">
                         <InputGroupAddon addonType="prepend"><i class="fa fa-envelope"></i></InputGroupAddon>
                         <Input className="inputLogin" placeholder="Email" />
                       </InputGroup>
@@ -40,7 +51,7 @@ class Registry  extends Component {
                     </form>
                     <br/>
                     <div>
-                      <Button className="btnSumma" size="lg" block>Registrarme</Button>
+                      <BtnMain title="Registrarme" className=""/>
                       <br/>
                       <FormGroup check>
                         <Label className="checkboxSumma" check>

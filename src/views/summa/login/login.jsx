@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MainTitle from '../components/mainTitle';
+import BtnMain from '../components/btnMain';
 import { Container, Row, Col, InputGroup, InputGroupAddon, Input, Button, FormGroup, Label, Form } from 'reactstrap';
 import imgLogin from '../../../assets/img/summa/imgLogin.jpg';
 import logo from '../../../assets/img/summa/logo.png';
@@ -45,7 +46,7 @@ class Login  extends Component {
                         </Form>
                       <br/>
                       <div>
-                        <Button className="btnSumma" size="lg" block>Entrar</Button>
+                        <BtnMain title="Entrar" className=""/>
                         <p>¿Olvidaste tu contraseña? <BtnText title="Haz click Aquí" className="btnTxt"/> </p>
                       </div> 
                       <div><img src={imgLogin} alt="logo" className="imgLogin center"/></div>

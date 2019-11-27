@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MainTitle from '../components/mainTitle';
+import BtnMain from '../components/btnMain';
 import { Container, Row, Col, InputGroup, InputGroupAddon, InputGroupText, Input, Button, FormGroup, Label } from 'reactstrap';
 import imgBg from '../../../assets/img/summa/tren3.png';
 import imgNewPass from '../../../assets/img/summa/imgNewPass.png';
@@ -36,7 +37,7 @@ class newPass  extends Component {
                     </form>
                     <br/>
                     <div>
-                      <Button className="btnSumma" size="lg" block>Cambiar</Button>
+                      <BtnMain title="Cambiar" className=""/>
                     </div> 
                     <div>
                       <img src={imgNewPass} alt="logo" className="imgNewPass"/>

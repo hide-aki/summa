@@ -14,6 +14,7 @@ const FAQ = React.lazy(() => import('./views/alpha/FAQ/faq'));
 const Datos = React.lazy(() => import('./views/summa/datos'));
 const Cuentas = React.lazy(() => import('./views/summa/cuentas'));
 const Terminos = React.lazy(() => import('./views/summa/terminosycondiciones'));
+const Balance = React.lazy(() => import('./views/summa/balance'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -29,7 +30,8 @@ const routes = [
   //vistas summa
   { path: '/datos', name: 'Datos', component: Datos },
   { path: '/cuentas', name: 'Cuentas', component: Cuentas },
-  {path: '/terminosycondiciones', name:'Terminos y Condiciones', component: Terminos },
+  { path: '/terminosycondiciones', name:'Terminos y Condiciones', component: Terminos },
+  { path: '/balance', name:'Balance', component: Balance },
 ];
 
 export default routes;

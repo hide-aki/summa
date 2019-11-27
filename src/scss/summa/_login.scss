@@ -119,7 +119,7 @@
   }
 }
 .bgTren{
-  background-image: url(../src/assets/img/summa/bgTren.jpg);
+  background-image: url(../src/assets/img/summa/bg/bgTren.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,7 +128,7 @@
   position: relative;
 }
 .bgLogin{
-  background-image: url(../src/assets/img/summa/bgLogin.jpg);
+  background-image: url(../src/assets/img/summa/bg/bgLogin.jpg);
   background-position-x: right;
   background-position-y: bottom;
   background-repeat: no-repeat;
@@ -176,7 +176,7 @@
 
 /*---- RECOVER PASS -------*/
 .bgRecoverPass{
-  background-image: url(../src/assets/img/summa/bgRecoverPass.jpg);
+  background-image: url(../src/assets/img/summa/bg/bgRecoverPass.jpg);
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
@@ -251,7 +251,7 @@
   background-color: $whiteColor;
   border-radius: 30px;
   width: 60%;
-  margin-top: 20%;
+  margin-top: 10%;
   margin-left: 20%;
   padding: 5% 0% 2% 0% !important;
   @media screen and (max-width:$screenMedium){
@@ -276,7 +276,7 @@
 }
 .lead{margin-top: 30px;}
 .bgMess{
-  background-image: url(../src/assets/img/summa/bgTrenBlur2.jpg);
+  background-image: url(../src/assets/img/summa/bg/bgTrenBlur2.jpg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -290,3 +290,4 @@
   margin-bottom: 55px;
   width: 150px;
 }
+

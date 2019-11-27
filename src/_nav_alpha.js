@@ -27,25 +27,25 @@ export default [
   // Submenu de "CUENTA"
   {
     name: 'Datos Generales',
-    url: '/',
+    url: '/datos',
     icon: 'fa fa-adjust',
     class: 'nav-link-bb subMenu',
     isEnabled: true,
   },
   {
     name: 'Terminos y condiciones',
-    url: '/',
+    url: '/terminosycondiciones',
     icon: 'fa fa-check-square',
     class: 'nav-link-bb subMenu',
     isEnabled: true,
   },
-  {
-    name: 'Documentación',
-    url: '/',
-    icon: 'fa fa-file',
-    class: 'nav-link-bb subMenu',
-    isEnabled: true,
-  },
+  // {
+  //   name: 'Documentación',
+  //   url: '/',
+  //   icon: 'fa fa-file',
+  //   class: 'nav-link-bb subMenu',
+  //   isEnabled: true,
+  // },
   // Termina submenu de "CUENTA"
   {
     name: 'OPERACIONES',

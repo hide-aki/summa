@@ -1,5 +1,11 @@
 
 /*---------- GENERALES --------*/
+.espacio{
+  padding: 20px;
+}
+.espacio2{
+  padding: 40px;
+}
 .alfa_footer {
   display: none;
 }
@@ -21,47 +27,6 @@
   text-align: center;
 }
 .liTerminos{list-style:none;}
-.btnSec{
-  border: 1px solid $mainPink;
-  background-color: inherit;
-  color: $mainPink;
-  font-size: 1rem;
-  border-radius: 20px;
-  margin: 5%;
-  width: 60%;
-  padding: 5px;
-}
-.btnSec:hover{
-  background-color: $mainPink;
-  color: $whiteColor;
-}
-.btnMain{
-  background-color: $mainPink;
-  color: $whiteColor;
-  font-size: 1rem;
-  border-radius: 20px;
-  margin: 5%;
-  width: 60%;
-  padding: 5px;
-}
-.btnMain:hover{
-  border: 1px solid $mainPink;
-  background-color: $lightGray;
-  color: $mainPink;
-}
-.btnGeneral{
-  background-color: $mainPink;
-  color: $whiteColor;
-  font-size: $fontOne;
-  border-radius: 10px;
-  width: 20%;
-  padding: 5px;
-}
-.btnGeneral:hover{
-  border: 1px solid $mainPink;
-  background-color: $lightGray;
-  color: $mainPink;
-}
 .MessageText{margin: 5% 0% 5% 0%;}
 
 
@@ -123,19 +88,7 @@ html:not([dir="rtl"]) .sidebar {
     color: $whiteColor;
 }
 /*------------------*/
-.btnSumma{
-  background-color: $mainPink;
-  color: $whiteColor;
-  font-size: $fontTwo;
-  border-radius: 20px;
-  margin: $five;
-  width: $eighty;
-  margin-left: $ten;
-  @media screen and (max-width:$screenIpad){
-    font-size: $fontTwo;
-    width: $eighty;
-  }
-}
+
 .searchSumma{
   margin: 50px 60px 50px;
   width: $ninety;
@@ -153,16 +106,100 @@ html:not([dir="rtl"]) .sidebar {
     padding: 10px;
   }
 }
-.summaMain{
-  background-image: url(../src/assets/img/summa/bgSumma.jpg);
+// .bgMain {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-image: url(../src/assets/img/summa/bg/bgSumma.jpg));
+//   background-repeat: no-repeat;
+//   background-position: bottom;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   background-position-x: right;
+//   background-position-y: bottom;
+//   /* position: relative; */
+//   width: 100%;
+//   padding-right: 15px;
+//   padding-left: 15px;
+//   margin-right: auto;
+//   margin-left: auto;
+//   z-index: -1;
+// }
+.bgDatos{
+  background-image: url(../src/assets/img/summa/bg/datosBg.jpg);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: auto;
   background-position-x: right;
   background-position-y: bottom;
   position: relative;
-  width: $one;
+  width: 100%;
+  // height: 100vh;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width:$screenMedium){
+    background-size:contain;
+  }
+  @media screen and (max-width:$screenIpad){
+    background-position: bottom;
+  }
+}
+.bgCuentas{
+  background-image: url(../src/assets/img/summa/bg/cuentasBg.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto;
+  background-position-x: right;
+  background-position-y: bottom;
+  position: relative;
+  width: 100%;
+  // height: 100vh;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width:$screenMedium){
+    background-size:contain;
+  }
+  @media screen and (max-width:$screenIpad){
+    background-position: bottom;
+  }
+}
+.bgBalance{
+  background-image: url(../src/assets/img/summa/bg/balanceBg.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto;
+  background-position-x: right;
+  background-position-y: bottom;
+  position: relative;
+  width: 100%;
+  // height: 100vh;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width:$screenMedium){
+    background-size:contain;
+  }
+  @media screen and (max-width:$screenIpad){
+    background-position: bottom;
+  }
+}
+.bgTerminos{
+  background-image: url(../src/assets/img/summa/bg/terminosBgd.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto;
+  background-position-x: right;
+  background-position-y: bottom;
+  position: relative;
+  width: 100%;
+  // height: 100vh;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -191,4 +228,142 @@ html:not([dir="rtl"]) .sidebar {
   background-color: $mainPink;
   border-left: inherit;
   border-radius: 0 0.25rem 0.25rem 0;
+}
+.containerDatos{
+  border: 1px solid $mainPink;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.logoPasarela{
+  width: 60px;
+  vertical-align: middle !important;
+  padding: 0px;
+}
+.logoPasarela2{
+  width: 70px;
+  vertical-align: middle !important;
+  padding: 0px;
+}
+
+/*-----TERMINOS Y CONDICIONES ----*/
+.tC{
+  text-align: justify;
+  margin-top: 10px;
+  padding: 0px 0px 0px 0px !important;
+  @media screen and (max-width:$screenMedium){
+    padding: 10px 0px 0px 30px !important;
+  }
+  @media screen and (max-width:$screenIpad){
+  }
+  @media screen and (max-width:$screenMobile){
+    padding: 0px 0px 0px 0px !important;
+  }
+  @media screen and (max-width:$screenMobileXs){
+  }
+}
+.textTC {
+  background-color: $whiteColor;
+  height: 700px;
+  overflow-y: scroll;
+  @media screen and (max-width:$screenMedium){
+    height: 800px;
+  }  
+  @media screen and (max-width:$screenIpad){
+    height: 700px;
+  }
+  @media screen and (max-width:$screenMobile){
+    height: 500px;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    height: 300px;
+  }
+}
+
+/*---CUENTAS---*/
+.docCompleto{
+  display: flex;
+  width: 20px;
+  height: 20px;
+  // margin: 0 auto;
+  background-color: $warningGreen;
+  border-radius: 50%;
+  @media screen and (max-width:$screenMedium){
+    height: 90%;
+  }  
+  @media screen and (max-width:$screenIpad){
+  }
+  @media screen and (max-width:$screenMobile){
+  }
+  @media screen and (max-width:$screenMobileXs){
+  }
+}
+.docIncompleto{
+  display: flex;
+  width: 20px;
+  height: 20px;
+  // margin: 0 auto;
+  background-color: $warningYellow;
+  border-radius: 50%;
+}
+.docVacio{
+  display: flex;
+  width: 20px;
+  height: 20px;
+  // margin: 0 auto;
+  background-color: $warningPink;
+  border-radius: 50%;
+}
+.infoFileG{
+  border: 1px solid #E5E0E0;
+  border-left: 10px solid  $warningGreen !important;
+  padding: 20px !important;
+  border-radius: 10px;
+}
+.infoFileY{
+  border: 1px solid #E5E0E0;
+  border-left: 10px solid  $warningYellow !important;
+  padding: 20px !important;
+  border-radius: 10px;
+}
+.infoFileR{
+  border: 1px solid #E5E0E0;
+  border-left: 10px solid  $warningPink !important;
+  padding: 20px !important;
+  border-radius: 10px;
+}
+.infoDoc{
+  color: #BFBFBF;
+}
+.fileImg{
+  width: 100px;
+}
+.InfoDocuments{
+  margin-top: 3%;
+}
+.indicadores {
+  width: 45%;
+  margin-top: 3%;
+  text-align: center;
+}
+.modal-dialog {
+  max-width: 50% !important;
+  margin: 1.75rem auto;
+}
+
+/*-- BALANCE ----*/
+.ultimoMov{
+    border-bottom: 1px solid gray;
+    padding: 15px 0px 15px 20px;
+    display: inline;
+}
+.movimientos{
+  align-items: center;
+  margin-left: 10%;
+  padding: 0px !important;
+  margin: 6% !important;
+}
+.iconMov{
+  width: 100%;
+  left: -80px;
 }
