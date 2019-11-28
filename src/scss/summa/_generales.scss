@@ -1,20 +1,24 @@
-
 /*---------- GENERALES --------*/
 .espacio{
   padding: 20px;
 }
+
 .espacio2{
-  padding: 40px;
+  padding: 80px;
 }
+
 .alfa_footer {
   display: none;
 }
+
 .barralateral {
     background-color: $lightGray;
 }
+
 .tab-content {
   padding-bottom: $fifteen !important;
 }
+
 .title{
   color: $mainPink;
   font-weight: $fontWeight5;
@@ -23,11 +27,18 @@
     text-align: center;
   }
 }
+
 .center{
   text-align: center;
 }
-.liTerminos{list-style:none;}
-.MessageText{margin: 5% 0% 5% 0%;}
+
+.liTerminos{
+  list-style:none;
+}
+
+.MessageText{
+  margin: 5% 0% 5% 0%;
+}
 
 
 /*----- MENÚ ------*/
@@ -35,41 +46,52 @@
     width: 200px;
     padding: 0;
 }
+
 .nav-link-bb{
   color: $mainPink;
 }
+
 .nav-link-bb:hover{
     color: $whiteColor;
     background-color: $mainPink !important;
-  }
+}
+
 .sidebar .nav-link.active {
     background: $mainPink;
 }
+
 .sidebar .nav {
     width: 250px;
 }
+
 .sidebar .sidebar-nav {
     width: 250px;
 }
+
 .barralateral .nav-link .nav-icon {
     color: $mainPink;
 }
+
 .barralateral .nav-link.active .nav-icon {
     background-color: $mainPink;
     color: $whiteColor;
 }
+
 .nav-icon:hover{
     color: $whiteColor !important;
 }
+
 html:not([dir="rtl"]) .sidebar {
     margin-left: -250px;
 }
+
 .navExit{
     width: 250px;
     position:absolute;
     left:0px;
     bottom:0px;
 }
+
 .navExit, .fa-sign-out{
     background-color: $mainPink;
     color: $whiteColor !important;
@@ -79,16 +101,19 @@ html:not([dir="rtl"]) .sidebar {
     color: $whiteColor !important;
     background-color: $mainPink !important;
 }
+
 .subMenu{
     color: $whiteColor;
     background-color: $darkGray;
     margin-left: 20px !important;
 }
+
 .barralateral .subMenu .nav-link .nav-icon {
     color: $whiteColor;
 }
-/*------------------*/
 
+
+/*------------------*/
 .searchSumma{
   margin: 50px 60px 50px;
   width: $ninety;
@@ -97,6 +122,7 @@ html:not([dir="rtl"]) .sidebar {
   border: .5px solid;
   margin-left: $five;
 }
+
 .main .container-fluid {
   padding: 50px 120px 0px 100px;
   @media screen and (max-width:$screenMedium){
@@ -106,6 +132,7 @@ html:not([dir="rtl"]) .sidebar {
     padding: 10px;
   }
 }
+
 // .bgMain {
 //   position: absolute;
 //   top: 0;
@@ -127,6 +154,7 @@ html:not([dir="rtl"]) .sidebar {
 //   margin-left: auto;
 //   z-index: -1;
 // }
+
 .bgDatos{
   background-image: url(../src/assets/img/summa/bg/datosBg.jpg);
   background-repeat: no-repeat;
@@ -142,12 +170,19 @@ html:not([dir="rtl"]) .sidebar {
   margin-right: auto;
   margin-left: auto;
   @media screen and (max-width:$screenMedium){
-    background-size:contain;
+    padding-left: 60px;
   }
   @media screen and (max-width:$screenIpad){
-    background-position: bottom;
+    background-position-x: right;
+    background-position-y: bottom;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding-left: 15px;
+  }
+  @media screen and (max-width:$screenMobileXs){
   }
 }
+
 .bgCuentas{
   background-image: url(../src/assets/img/summa/bg/cuentasBg.jpg);
   background-repeat: no-repeat;
@@ -163,12 +198,19 @@ html:not([dir="rtl"]) .sidebar {
   margin-right: auto;
   margin-left: auto;
   @media screen and (max-width:$screenMedium){
-    background-size:contain;
+    padding-left: 60px;
   }
   @media screen and (max-width:$screenIpad){
-    background-position: bottom;
+    background-position-x: right;
+    background-position-y: bottom;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding-left: 15px;
+  }
+  @media screen and (max-width:$screenMobileXs){
   }
 }
+
 .bgBalance{
   background-image: url(../src/assets/img/summa/bg/balanceBg.jpg);
   background-repeat: no-repeat;
@@ -184,12 +226,19 @@ html:not([dir="rtl"]) .sidebar {
   margin-right: auto;
   margin-left: auto;
   @media screen and (max-width:$screenMedium){
-    background-size:contain;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   @media screen and (max-width:$screenIpad){
-    background-position: bottom;
+    padding-left: 0%;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding-right: 10%;
+  }
+  @media screen and (max-width:$screenMobileXs){
   }
 }
+
 .bgTerminos{
   background-image: url(../src/assets/img/summa/bg/terminosBgd.jpg);
   background-repeat: no-repeat;
@@ -204,13 +253,9 @@ html:not([dir="rtl"]) .sidebar {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  @media screen and (max-width:$screenMedium){
-    background-size:contain;
-  }
-  @media screen and (max-width:$screenIpad){
-    background-position: bottom;
-  }
+
 }
+
 
 /*------ CUENTAS -----*/
 .custom-file-label::after {
@@ -229,10 +274,26 @@ html:not([dir="rtl"]) .sidebar {
   border-left: inherit;
   border-radius: 0 0.25rem 0.25rem 0;
 }
+
 .containerDatos{
   border: 1px solid $mainPink;
   border-radius: 20px;
   padding: 20px;
+  margin: 10px;
+  max-width: 47% !important;
+}
+
+.datosCuentas{
+  margin-left: 5px;
+  width:100% ;
+  @media screen and (max-width:$screenMobile){
+    margin-left: -37px;
+    width: 125%;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    margin-left: -23px;
+    width: 125%;
+  }
 }
 
 .logoPasarela{
@@ -240,11 +301,28 @@ html:not([dir="rtl"]) .sidebar {
   vertical-align: middle !important;
   padding: 0px;
 }
+
 .logoPasarela2{
   width: 70px;
   vertical-align: middle !important;
   padding: 0px;
 }
+
+.imgPasarela{
+  margin-left: 0%;
+  @media screen and (max-width:$screenMedium){
+    margin-left: -10%;
+  }
+  @media screen and (max-width:$screenIpad){
+  }
+  @media screen and (max-width:$screenMobile){
+    width: 360px;
+  }
+  @media screen and (max-width:$screenMobileXs){
+    margin-left: -15%;
+  }
+}
+
 
 /*-----TERMINOS Y CONDICIONES ----*/
 .tC{
@@ -262,6 +340,7 @@ html:not([dir="rtl"]) .sidebar {
   @media screen and (max-width:$screenMobileXs){
   }
 }
+
 .textTC {
   background-color: $whiteColor;
   height: 700px;
@@ -279,6 +358,7 @@ html:not([dir="rtl"]) .sidebar {
     height: 300px;
   }
 }
+
 
 /*---CUENTAS---*/
 .docCompleto{
@@ -298,6 +378,7 @@ html:not([dir="rtl"]) .sidebar {
   @media screen and (max-width:$screenMobileXs){
   }
 }
+
 .docIncompleto{
   display: flex;
   width: 20px;
@@ -306,6 +387,7 @@ html:not([dir="rtl"]) .sidebar {
   background-color: $warningYellow;
   border-radius: 50%;
 }
+
 .docVacio{
   display: flex;
   width: 20px;
@@ -314,41 +396,50 @@ html:not([dir="rtl"]) .sidebar {
   background-color: $warningPink;
   border-radius: 50%;
 }
+
 .infoFileG{
   border: 1px solid #E5E0E0;
   border-left: 10px solid  $warningGreen !important;
   padding: 20px !important;
   border-radius: 10px;
 }
+
 .infoFileY{
   border: 1px solid #E5E0E0;
   border-left: 10px solid  $warningYellow !important;
   padding: 20px !important;
   border-radius: 10px;
 }
+
 .infoFileR{
   border: 1px solid #E5E0E0;
   border-left: 10px solid  $warningPink !important;
   padding: 20px !important;
   border-radius: 10px;
 }
+
 .infoDoc{
   color: #BFBFBF;
 }
+
 .fileImg{
   width: 100px;
 }
+
 .InfoDocuments{
   margin-top: 3%;
 }
+
 .indicadores {
   width: 45%;
   margin-top: 3%;
   text-align: center;
-}
-.modal-dialog {
-  max-width: 50% !important;
-  margin: 1.75rem auto;
+  @media screen and (max-width:$screenMedium){
+    width: 60%;
+  }
+  @media screen and (max-width:$screenMobile){
+    width: 100%;
+  }
 }
 
 /*-- BALANCE ----*/
@@ -357,13 +448,33 @@ html:not([dir="rtl"]) .sidebar {
     padding: 15px 0px 15px 20px;
     display: inline;
 }
+
 .movimientos{
   align-items: center;
   margin-left: 10%;
   padding: 0px !important;
   margin: 6% !important;
 }
+
 .iconMov{
   width: 100%;
   left: -80px;
+  @media screen and (max-width:$screenMedium){
+    left: 0px;
+  }  
+  @media screen and (max-width:$screenIpad){
+  }
+  @media screen and (max-width:$screenMobile){
+  }
+  @media screen and (max-width:$screenMobileXs){
+  }
 }
+
+.textNews{
+  text-align: justify;
+  margin-top: 30px;
+}
+
+// .tabulator-cell{
+//   height: 0px !important;
+// }

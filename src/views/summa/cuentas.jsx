@@ -175,7 +175,7 @@ class Cuentas extends Component {
                       <Col sm="12" md={{ size: 8}}>
                         <Form>
                           <Row>
-                            <Col>
+                            <Col sm="12" md="6">
                               <p>Monto</p>
                               <FormGroup>
                                 <Label for="exampleMonto" className="custom-file-label"></Label>
@@ -186,7 +186,7 @@ class Cuentas extends Component {
                           </Row>
                           <br/>
                           <Row>
-                            <Col>
+                            <Col sm="12" md="6">
                               <p>Tipo de transacción</p>
                               <FormGroup row>
                                 <Col sm="12">
@@ -198,7 +198,7 @@ class Cuentas extends Component {
                                 </Col>
                               </FormGroup>
                             </Col>
-                            <Col>
+                            <Col sm="12" md="6">
                               <p>Cuenta</p>
                               <FormGroup row>
                                 <Col sm="12">
@@ -213,34 +213,34 @@ class Cuentas extends Component {
                         </Form>
                         <br/><br/><br/>
                         {/* Todos los datos a continuación agregado en <p> aparecen solo hasta que se ha elegido el tipo de cuenta */}
-                        <Container className="containerDatos">
+                        <Container className="containerDatos datosCuentas">
                         <Row>
-                          <Col>
+                          <Col sm="12" md="6">
                             <h6>Nombre del beneficiario</h6>
                             <p>YOURPAYCHOICE SA de CV</p>
                             <br/><br/>
                           </Col>
-                          <Col>
+                          <Col sm="12" md="6">
                             <h6>Banco beneficiario</h6>
                             <p>Santander MXN</p>
                             <br/><br/>
                           </Col>
                         </Row>
                         <Row>
-                          <Col>
+                          <Col sm="12" md="6">
                             <h6>Dirección del banco beneficiario</h6>
                             <p>Av. Insurgentes Sur 859 piso 2 ofna 249 Col. Nápoles Delegación Benito Juárez, CDMX CP 03810</p>
                             <br/><br/>
                           </Col>
                           {/* El número de cuenta solo aparece si es transferencia nacional */}
-                          <Col>
+                          <Col sm="12" md="6">
                             <h6>No. de Cuenta</h6>
                             <p>65-50581142-9</p>
                             <br/><br/>
                           </Col>
                         </Row>
                         <Row>
-                          <Col>
+                          <Col sm="12" md="6">
                             <h6>CLABE</h6>
                             <p>014180655058114296</p>
                             <br/><br/>
@@ -266,7 +266,7 @@ class Cuentas extends Component {
                   {/* Este formulario es el primero que se muestra dentro de esta sección */}
                   <Container>
                     <Row>
-                      <Col sm="12"  md={{ size: 6}}>
+                      <Col sm="12" md={{ size: 6}}>
                         <Form>
                           <p>Monto</p>
                           <FormGroup>
@@ -282,15 +282,15 @@ class Cuentas extends Component {
                         </Form>
                         <br/>
                         <Row>
-                          <Col>
+                          <Col sm="12">
                             <Row>
-                              <Col>
+                              <Col sm="12">
                                 <Button onClick={""} className="btnLogoPas"><img src={logoYP} alt="logo" className="logoPasarela"/></Button>
                               </Col>
-                              <Col>
+                              <Col sm="12">
                                 <Button onClick={""} className="btnLogoPas"><img src={paytogo} alt="logo" className="logoPasarela2"/></Button>
                               </Col>
-                              <Col>
+                              <Col sm="12">
                                 <Button onClick={""} className="btnLogoPas"><img src={payyo} alt="logo" className="logoPasarela2"/></Button>
                               </Col>
                             </Row>
@@ -302,7 +302,7 @@ class Cuentas extends Component {
                   </Container>
                   <br/><br/><br/>
                    {/* Despues de dar click en alguno de los logos del formulario anterior se esconde el primer formulario y se muestra este */}
-                  <div><img src={pasarela} alt="logo" className=""/></div>
+                  <div><img src={pasarela} alt="logo" className="imgPasarela"/></div>
                 </Col>
               </Row>
             </Container>
@@ -334,7 +334,7 @@ class Cuentas extends Component {
           </TabPane>
         </TabContent>
         <div className="modal">
-          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+          <Modal isOpen={this.state.modal} toggle={this.toggle} className="containModal">
             <ModalHeader className="modalHeader">
               <Row>
                 <Col sm="12" md={{ size: 1 }}>
@@ -346,22 +346,24 @@ class Cuentas extends Component {
               </Row>
             </ModalHeader>
             <ModalBody sm="12" md={{ size: 8, offset: 2 }}>
-              <Row>
-                <Col>
-                  <p>Movimiento:</p>
-                  <p><strong>00037</strong></p>
-                  <br/>
-                  <p>Fecha de depósito:</p>
-                  <p><strong>20/11/2019</strong></p>
-                </Col>
-                <Col>
-                  <p>Monto:</p>
-                  <p><strong>$0.01</strong></p>
-                  <br/>
-                  <p>Método:</p>
-                  <p><strong>Transferencia Nacional</strong></p>
-                </Col>
-              </Row>
+              <Container>
+                <Row>
+                  <Col>
+                    <p>Movimiento:</p>
+                    <p><strong>00037</strong></p>
+                    <br/>
+                    <p>Fecha de depósito:</p>
+                    <p><strong>20/11/2019</strong></p>
+                  </Col>
+                  <Col>
+                    <p>Monto:</p>
+                    <p><strong>$0.01</strong></p>
+                    <br/>
+                    <p>Método:</p>
+                    <p><strong>Transferencia Nacional</strong></p>
+                  </Col>
+                </Row>
+              </Container>  
               <br/><br/>
               <Row>
                 <Col sm="12" md={{ size: 8, offset: 2 }}>

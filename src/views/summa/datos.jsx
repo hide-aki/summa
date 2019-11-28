@@ -9,41 +9,26 @@ import {
   NavLink,
   Row,
   Col,
-  Alert,
-  Button,
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
-  InputGroup, 
-  InputGroupAddon, 
   Input, 
   FormGroup, 
   Label,
-  CustomInput,
   Form,
-  Card, 
-  CardTitle, 
-  CardText, 
-  FormText
 } from 'reactstrap';
 import classnames from 'classnames';
 // COMPONENTES
 import Title from './components/title';
-import BtnMain from './components/btnMain';
 import BtnUpload from './components/btnUpload';
 import BtnDelete from './components/btnDelete';
-import BtnSec from './components/btnSec';
 import BtnGeneral from './components/btnGeneral';
 import BtnGeneralSec from './components/btnGeneralSec';
 // IMAGENES
-import card from '../../assets/img/summa/card.jpg';
 import cardEjem from '../../assets/img/summa/cardEjem.jpg';
 import credit from '../../assets/img/summa/credit.jpg';
 import domi from '../../assets/img/summa/domi.jpg';
 import indicadores from '../../assets/img/summa/indicadores.png';
-import fileEjemplo from '../../assets/img/summa/fileEjemplo.png';
-import pasos from '../../assets/img/summa/pasos.jpg';
 import paso1 from '../../assets/img/summa/paso1.png';
 import paso2 from '../../assets/img/summa/paso2.png';
 import paso3 from '../../assets/img/summa/paso3.png';
@@ -64,14 +49,6 @@ class Datos extends Component {
     })
   }
 
-  // toogle = tab => {
-  //   if (this.state.activeTab !== tab) {
-  //     this.setState({
-  //       activeTab: tab
-  //     });
-  //   }
-  // };
-    
   render() {
 
     const {
@@ -285,7 +262,7 @@ class Datos extends Component {
               <div className="espacio"></div>
               <Row className="archivoModal2">
                 <Col  md={{ size: 6 }} className="center">
-                  <div><img src={cardEjem} alt="logo" className=""/></div>
+                  <div><img src={cardEjem} alt="logo" className="imgFile"/></div>
                   <Row>
                     <Container className="center">
                       <Row>
@@ -310,7 +287,7 @@ class Datos extends Component {
               <Row>
                 <Col>
                 </Col>
-                <Col>
+                <Col xs="12">
                   <Container className="btnTC center">
                     <Row>
                       <Col onClick={this.toggle}>

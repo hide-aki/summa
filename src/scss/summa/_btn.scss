@@ -7,11 +7,13 @@
     width: 60%;
     padding: 5px;
   }
+
   .btnMain:hover{
     border: 1px solid $mainPink;
     background-color: $lightGray;
     color: $mainPink;
   }
+
   .btnSec{
     border: 1px solid $mainPink;
     background-color: inherit;
@@ -26,6 +28,7 @@
     background-color: $mainPink;
     color: $whiteColor;
   }
+
   .btnGeneral{
     background-color: $mainPink;
     color: $whiteColor;
@@ -34,12 +37,24 @@
     width: 100%;
     padding: 5px 20px;
     margin-top: 10px;
+    @media screen and (max-width:$screenMedium){
+      width: 120%;
+    }
+    @media screen and (max-width:$screenIpad){
+      width: 130%;
+    }
+    @media screen and (max-width:$screenMobile){
+      width: 100%;
+    }
+    @media screen and (max-width:$screenMobileXs){
+    }
   }
   .btnGeneral:hover{
     border: 1px solid $mainPink;
     background-color: $lightGray;
     color: $mainPink;
   }
+
   .btnGeneralSec{
     border: 1px solid $mainPink;
     background-color: inherit;
@@ -54,6 +69,7 @@
     background-color: $mainPink;
     color: $whiteColor;
   }
+
   .btnSumma{
     background-color: $mainPink;
     color: $whiteColor;
@@ -67,6 +83,7 @@
       width: $eighty;
     }
   }
+  
   .btnBasic{
     width: 50px;
     vertical-align: middle !important;
@@ -75,17 +92,24 @@
     background-color: inherit !important;
     border: none !important;
   }
+
   .btnBasic:active{
     background-color: inherit !important;
     border: none !important;
   }
+
   .btnTC{
     display: flex;
     justify-content: flex-end;
   }
+
   .btnChild{
     display: block;
     align-self: flex-end;
+    @media screen and (max-width:$screenMedium){
+      align-self: center !important;
+  }  
+
   }
   .btnLogoPas:hover{
     background-color: inherit !important;
@@ -95,6 +119,7 @@
     background-color: inherit !important;
     border: inherit !important;
   }
+
   .btn-secondary {
     background-color: inherit !important; 
     border: none !important; 
@@ -103,6 +128,7 @@
     background-color: inherit !important; 
     border: none !important; 
 }
+
 .btnClose{
     color: $whiteColor;
     background-color: inherit !important;
@@ -110,7 +136,8 @@
     justify-content: flex-end !important;
     font-weight: $fontWeight1;
 }
-  .btnIcon{
+
+.btnIcon{
     border: inherit;
     background-color: inherit;
     color: $mainPink;
@@ -118,4 +145,8 @@
 }
 .btnIcon:hover{
   color:$blackColor;
+}
+.btnTrash{
+  font-size: $fontThree !important;
+  padding: 10px;
 }

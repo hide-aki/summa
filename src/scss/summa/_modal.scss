@@ -1,20 +1,42 @@
+.modal-dialog {
+    max-width: 50% !important;
+    margin: 1.75rem auto;
+    @media screen and (max-width:$screenMedium){
+        max-width: 80% !important;
+    }  
+    @media screen and (max-width:$screenIpad){
+    }
+    @media screen and (max-width:$screenMobile){
+        max-width: 100% !important;
+    }
+    @media screen and (max-width:$screenMobileXs){
+    }
+}
+  
+
+
 .modalHeader{
     background-color: $mainPink !important;
     display: flex;
 }
+
 .titleModal {
     color: $whiteColor !important;
     padding-left: 10px;
 }
+
 .bodyModal{
     padding: 5%;
 }
+
 .footerModal{
     text-align: center !important;
 }
+
 .modal-footer {
     display: block !important;
 }
+
 .archivoModal{
     border: 1px solid pink;
     border-radius: 10px;
@@ -22,16 +44,35 @@
     margin-left: 6%;
     @media screen and (max-width:$screenMobile){
         margin-left: -3%;
-      }
+    }
 }
+
 .archivoModal2{
     border: 1px solid pink;
     padding: 10px;
     border-radius: 10px;
     @media screen and (max-width:$screenMobile){
         margin-left: -3%;
-      }
+        padding: 5px;
+        border: none;
+    }
+    @media screen and (max-width:$screenMobileXs){
+        margin-left: 0%;
+    }
 }
+.imgFile{
+    margin-left: -2%;
+    @media screen and (max-width:$screenIpad){
+        margin-left: -9%;
+    }
+    @media screen and (max-width:$screenMobile){
+        margin-left: -3%;
+    }
+    @media screen and (max-width:$screenMobileXs){
+        margin-left: -7%;
+    }
+}
+
 .btnIcon {
     color: $mainPink; 
     background-color: inherit !important; 
@@ -47,11 +88,16 @@
     background-color: inherit !important; 
     border: none !important; 
 }
-.file{width: 50px;}
+
+.file{
+    width: 50px;
+}
+
 .infoText{
     vertical-align: middle;
     margin-top: 10%;
 }
+
 .completo {
     background: $warningGreen;
     color: $whiteColor;
@@ -59,6 +105,7 @@
     font-size: $fontTwo;
     padding: 5px 0px 5px 0px;
 }
+
 .incompleto {
     background: $warningYellow;
     color: $whiteColor;
@@ -66,10 +113,26 @@
     font-size: $fontTwo;
     padding: 5px 0px 5px 0px;
 }
+
 .vacio {
     background: $warningPink;
     color: $whiteColor;
     text-align: center;
     font-size: $fontTwo;
     padding: 5px 0px 5px 0px;
+}
+
+.containModal{
+    max-width: 30% !important;
+    @media screen and (max-width:$screenMedium){
+        max-width: 50% !important;
+    }  
+    @media screen and (max-width:$screenIpad){
+        max-width: 70% !important;
+    }
+    @media screen and (max-width:$screenMobile){
+        max-width: 100% !important;
+    }
+    @media screen and (max-width:$screenMobileXs){
+    }
 }

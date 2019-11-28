@@ -31,6 +31,7 @@ import { Colors, Typography } from './Theme';
 import { Compose, Inbox, Invoice, Message } from './Apps';
 import Widgets from './Widgets';
 
+
 export {
   Badges,
   Typography,
@@ -82,6 +83,6 @@ export {
   Message,
   Compose,
   Invoice,
-  ReactGoogleMaps
+  ReactGoogleMaps,
 };
 
