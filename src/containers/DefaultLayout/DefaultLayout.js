@@ -1,7 +1,13 @@
 import React, { Component, Suspense } from 'react';
 import { push } from 'react-router-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { Container, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import {
+  Container,
+  ButtonDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { MessagesFunctions, ALERT_TYPE } from '@pleedtech/pt-components';
@@ -39,15 +45,14 @@ const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 const DefaultAside = React.lazy(() => import('./DefaultAside'));
 const DefaultFooter = React.lazy(() => import('./DefaultFooter.1'));
 
-
 //menuSumma
-  // const [dropdownOpen, setOpen] = useState(false);
-  // const toggle = () => setOpen(!dropdownOpen);
+// const [dropdownOpen, setOpen] = useState(false);
+// const toggle = () => setOpen(!dropdownOpen);
 
 class DefaultLayout extends Component {
   constructor(props) {
     super(props);
-    this.state = { translateRoutes: [] };
+    this.state = { translateRoutes: [], imageRoute: '' };
     this.messagesFunctions = new MessagesFunctions(props.selectMessages);
   }
 
@@ -254,22 +259,24 @@ class DefaultLayout extends Component {
     }
   }
 
-    //
-    //   const bgContainer = document.getElementsByClassName("bgMain");
-    //   switch (routes) {
-    //     case '/datos':
-    //       bgContainer.classList.add("bgDatos"); 
-    //       break;
-    //     case '/terminosycondiciones':
-    //       bgContainer.classList.add("bgTerminos");
-    //       break;
-    //     case '/cuentas':
-    //       bgContainer.classList.add("bgCuentas");
-    //       break;
-    //     case '/balance':
-    //       bgContainer.classList.add("bgBalance");
-    //       break;
-
+  bgContainer = (route) => {
+    let classRoute = '';
+    switch (route) {
+      case '/datos':
+        classRoute = 'bgDatos';
+        break;
+      case '/terminosycondiciones':
+        classRoute = 'bgTerminos';
+        break;
+      case '/cuentas':
+        classRoute = 'bgCuentas';
+        break;
+      case '/balance':
+        classRoute = 'bgBalance';
+        break;
+    }
+    this.setState({ imageRoute: classRoute });
+  };
 
   translateRoutes = () => {
     if (Array.isArray(routes) && isEmpty(routes) === false) {
@@ -318,7 +325,7 @@ class DefaultLayout extends Component {
   };
 
   render() {
-    const { translateRoutes } = this.state;
+    const { translateRoutes, imageRoute } = this.state;
     const { redirectTo, location, dataProfile } = this.props;
 
     return (
@@ -351,6 +358,7 @@ class DefaultLayout extends Component {
                               // className={`${item.class} nav-item`}
                               className={`${item.class}`}
                               onClick={() => {
+                                this.bgContainer(item.url);
                                 if (item.isEnabled === true) {
                                   redirectTo(item.url);
                                 }
@@ -382,7 +390,7 @@ class DefaultLayout extends Component {
             {/* <div className="bgMain bgDatos"></div> */}
             {/* <div className="bgMain bgTerminos"></div> */}
             {/* <div className="bgMain bgCuentas"></div> */}
-            <div className="bgMain bgBalance"></div>
+            <div className={`bgMain ${imageRoute}`}></div>
             {/* <AppBreadcrumb appRoutes={translateRoutes} /> */}
             <Container fluid>
               <Suspense fallback={this.loading()}>
@@ -436,7 +444,4 @@ const mapDispatchToProps = (dispatch) => ({
   redirectTo: (route) => dispatch(push(route)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(DefaultLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);
