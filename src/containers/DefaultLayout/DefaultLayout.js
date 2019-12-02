@@ -254,6 +254,23 @@ class DefaultLayout extends Component {
     }
   }
 
+    //
+    //   const bgContainer = document.getElementsByClassName("bgMain");
+    //   switch (routes) {
+    //     case '/datos':
+    //       bgContainer.classList.add("bgDatos"); 
+    //       break;
+    //     case '/terminosycondiciones':
+    //       bgContainer.classList.add("bgTerminos");
+    //       break;
+    //     case '/cuentas':
+    //       bgContainer.classList.add("bgCuentas");
+    //       break;
+    //     case '/balance':
+    //       bgContainer.classList.add("bgBalance");
+    //       break;
+
+
   translateRoutes = () => {
     if (Array.isArray(routes) && isEmpty(routes) === false) {
       const newRoutes = routes.map((item) => {
@@ -361,8 +378,11 @@ class DefaultLayout extends Component {
               {/* <AppSidebarMinimizer /> */}
             </AppSidebar>
           )}
-          <main className="main alfa_main" style={{ marginTop: '20px' }}>
-            {/* <div className="bgMain"></div> */}
+          <main className="main summa_main" style={{ marginTop: '20px' }}>
+            {/* <div className="bgMain bgDatos"></div> */}
+            {/* <div className="bgMain bgTerminos"></div> */}
+            {/* <div className="bgMain bgCuentas"></div> */}
+            <div className="bgMain bgBalance"></div>
             {/* <AppBreadcrumb appRoutes={translateRoutes} /> */}
             <Container fluid>
               <Suspense fallback={this.loading()}>

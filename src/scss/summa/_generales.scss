@@ -1,24 +1,9 @@
 /*---------- GENERALES --------*/
-.espacio{
-  padding: 20px;
-}
-
-.espacio2{
-  padding: 80px;
-}
-
-.alfa_footer {
-  display: none;
-}
-
-.barralateral {
-    background-color: $lightGray;
-}
-
-.tab-content {
-  padding-bottom: $fifteen !important;
-}
-
+.espacio{padding: 20px;}
+.espacio2{padding: 80px;}
+.alfa_footer {display: none;}
+.barralateral {background-color: $lightGray;}
+.tab-content {padding-bottom: $fifteen !important;}
 .title{
   color: $mainPink;
   font-weight: $fontWeight5;
@@ -27,102 +12,36 @@
     text-align: center;
   }
 }
+.center{text-align: center;}
+.liTerminos{list-style:none;}
+.MessageText{margin: 5% 0% 5% 0%;}
+.bgForm{background-color: $whiteColor;}
 
-.center{
-  text-align: center;
+.bgMain {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  &.bgDatos{
+    background-image: url(../src/assets/img/summa/bg/bgDatos.jpg);
+  }
+  &.bgTerminos{
+    background-image: url(../src/assets/img/summa/bg/bgTerminos.jpg);
+  }
+  &.bgCuentas{
+    background-image: url(../src/assets/img/summa/bg/bgCuentas.jpg);  
+  }
+  &.bgBalance{
+    background-image: url(../src/assets/img/summa/bg/bgBalance.jpg);  
+  }
 }
-
-.liTerminos{
-  list-style:none;
+.summa_main{
+  position: relative;
 }
-
-.MessageText{
-  margin: 5% 0% 5% 0%;
-}
-
-
-/*----- MENÚ ------*/
-.app-header .navbar-brand {
-    width: 200px;
-    padding: 0;
-}
-
-.nav-link-bb{
-  color: $mainPink;
-}
-
-.nav-link-bb:hover{
-    color: $whiteColor;
-    background-color: $mainPink !important;
-}
-
-.sidebar .nav-link.active {
-    background: $mainPink;
-}
-
-.sidebar .nav {
-    width: 250px;
-}
-
-.sidebar .sidebar-nav {
-    width: 250px;
-}
-
-.barralateral .nav-link .nav-icon {
-    color: $mainPink;
-}
-
-.barralateral .nav-link.active .nav-icon {
-    background-color: $mainPink;
-    color: $whiteColor;
-}
-
-.nav-icon:hover{
-    color: $whiteColor !important;
-}
-
-html:not([dir="rtl"]) .sidebar {
-    margin-left: -250px;
-}
-
-.navExit{
-    width: 250px;
-    position:absolute;
-    left:0px;
-    bottom:0px;
-}
-
-.navExit, .fa-sign-out{
-    background-color: $mainPink;
-    color: $whiteColor !important;
-}
-
-.sidebar .sidebar-minimizer {
-    color: $whiteColor !important;
-    background-color: $mainPink !important;
-}
-
-.subMenu{
-    color: $whiteColor;
-    background-color: $darkGray;
-    margin-left: 20px !important;
-}
-
-.barralateral .subMenu .nav-link .nav-icon {
-    color: $whiteColor;
-}
-
-
-/*------------------*/
-.searchSumma{
-  margin: 50px 60px 50px;
-  width: $ninety;
-  padding: 5px;;
-  border-radius: 5px;
-  border: .5px solid;
-  margin-left: $five;
-}
-
 .main .container-fluid {
   padding: 50px 120px 0px 100px;
   @media screen and (max-width:$screenMedium){
@@ -132,132 +51,84 @@ html:not([dir="rtl"]) .sidebar {
     padding: 10px;
   }
 }
-
-// .bgMain {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-image: url(../src/assets/img/summa/bg/bgSumma.jpg));
-//   background-repeat: no-repeat;
-//   background-position: bottom;
-//   background-size: cover;
-//   background-attachment: fixed;
-//   background-position-x: right;
-//   background-position-y: bottom;
-//   /* position: relative; */
-//   width: 100%;
-//   padding-right: 15px;
-//   padding-left: 15px;
-//   margin-right: auto;
-//   margin-left: auto;
-//   z-index: -1;
-// }
-
-.bgDatos{
-  background-image: url(../src/assets/img/summa/bg/datosBg.jpg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: auto;
-  background-position-x: right;
-  background-position-y: bottom;
-  position: relative;
-  width: 100%;
-  // height: 100vh;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  @media screen and (max-width:$screenMedium){
-    padding-left: 60px;
-  }
-  @media screen and (max-width:$screenIpad){
-    background-position-x: right;
-    background-position-y: bottom;
-  }
-  @media screen and (max-width:$screenMobile){
-    padding-left: 15px;
-  }
-  @media screen and (max-width:$screenMobileXs){
-  }
+/*----- MENÚ ------*/
+.app-header .navbar-brand {
+  width: 200px;
+  padding: 0;
 }
-
-.bgCuentas{
-  background-image: url(../src/assets/img/summa/bg/cuentasBg.jpg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: auto;
-  background-position-x: right;
-  background-position-y: bottom;
-  position: relative;
-  width: 100%;
-  // height: 100vh;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  @media screen and (max-width:$screenMedium){
-    padding-left: 60px;
-  }
-  @media screen and (max-width:$screenIpad){
-    background-position-x: right;
-    background-position-y: bottom;
-  }
-  @media screen and (max-width:$screenMobile){
-    padding-left: 15px;
-  }
-  @media screen and (max-width:$screenMobileXs){
-  }
+.nav-link-bb{
+  color: $mainPink;
 }
-
-.bgBalance{
-  background-image: url(../src/assets/img/summa/bg/balanceBg.jpg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: auto;
-  background-position-x: right;
-  background-position-y: bottom;
-  position: relative;
-  width: 100%;
-  // height: 100vh;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  @media screen and (max-width:$screenMedium){
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  @media screen and (max-width:$screenIpad){
-    padding-left: 0%;
-  }
-  @media screen and (max-width:$screenMobile){
-    padding-right: 10%;
-  }
-  @media screen and (max-width:$screenMobileXs){
-  }
+.nav-link-bb:hover{
+  color: $whiteColor;
+  background-color: $mainPink !important;
 }
-
-.bgTerminos{
-  background-image: url(../src/assets/img/summa/bg/terminosBgd.jpg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: auto;
-  background-position-x: right;
-  background-position-y: bottom;
-  position: relative;
-  width: 100%;
-  // height: 100vh;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-
+.sidebar .nav-link.active {
+  background: $mainPink;
 }
-
+.sidebar .nav {
+  width: 250px;
+}
+.sidebar .sidebar-nav {
+  width: 250px;
+}
+.barralateral .nav-link .nav-icon {
+  color: $mainPink;
+}
+.barralateral .nav-link.active .nav-icon {
+  background-color: $mainPink;
+  color: $whiteColor;
+}
+.nav-icon:hover{
+  color: $whiteColor !important;
+}
+html:not([dir="rtl"]) .sidebar {
+  margin-left: -250px;
+}
+.navExit{
+  width: 250px;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+}
+.navExit, .fa-sign-out{
+  background-color: $mainPink;
+  color: $whiteColor !important;
+}
+.sidebar .sidebar-minimizer {
+  color: $whiteColor !important;
+  background-color: $mainPink !important;
+}
+.subMenu{
+  color: $whiteColor;
+  background-color: $darkGray;
+  margin-left: 20px !important;
+}
+.barralateral .subMenu .nav-link .nav-icon {
+  color: $whiteColor;
+}
+.searchSumma{
+  margin: 50px 60px 50px;
+  width: $ninety;
+  padding: 5px;;
+  border-radius: 5px;
+  border: .5px solid;
+  margin-left: $five;
+}
 
 /*------ CUENTAS -----*/
+.containerCuentas{
+  margin: 0px 40px 0px 40px;
+  @media screen and (max-width:$screenMedium){
+    margin: 0px 40px 0px 40px;
+  }
+  @media screen and (max-width:$screenIpad){
+    margin: 0px 10px 0px -15px;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding-left: 15px;
+  }
+}
 .custom-file-label::after {
   position: absolute;
   top: 0;
@@ -274,15 +145,17 @@ html:not([dir="rtl"]) .sidebar {
   border-left: inherit;
   border-radius: 0 0.25rem 0.25rem 0;
 }
-
 .containerDatos{
   border: 1px solid $mainPink;
+  background-color: $whiteColor;
   border-radius: 20px;
   padding: 20px;
   margin: 10px;
   max-width: 47% !important;
+  @media screen and (max-width:$screenMobile){
+    max-width: 100% !important;
+  }
 }
-
 .datosCuentas{
   margin-left: 5px;
   width:100% ;
@@ -295,25 +168,20 @@ html:not([dir="rtl"]) .sidebar {
     width: 125%;
   }
 }
-
 .logoPasarela{
   width: 60px;
   vertical-align: middle !important;
   padding: 0px;
 }
-
 .logoPasarela2{
   width: 70px;
   vertical-align: middle !important;
   padding: 0px;
 }
-
 .imgPasarela{
   margin-left: 0%;
   @media screen and (max-width:$screenMedium){
     margin-left: -10%;
-  }
-  @media screen and (max-width:$screenIpad){
   }
   @media screen and (max-width:$screenMobile){
     width: 360px;
@@ -323,7 +191,6 @@ html:not([dir="rtl"]) .sidebar {
   }
 }
 
-
 /*-----TERMINOS Y CONDICIONES ----*/
 .tC{
   text-align: justify;
@@ -332,15 +199,10 @@ html:not([dir="rtl"]) .sidebar {
   @media screen and (max-width:$screenMedium){
     padding: 10px 0px 0px 30px !important;
   }
-  @media screen and (max-width:$screenIpad){
-  }
   @media screen and (max-width:$screenMobile){
     padding: 0px 0px 0px 0px !important;
   }
-  @media screen and (max-width:$screenMobileXs){
-  }
 }
-
 .textTC {
   background-color: $whiteColor;
   height: 700px;
@@ -359,77 +221,66 @@ html:not([dir="rtl"]) .sidebar {
   }
 }
 
-
-/*---CUENTAS---*/
+/*--DATOS---*/
+.containDatos{
+  @media screen and (max-width:$screenMedium){
+    margin: 0px 40px 0px 45px;
+  }
+  @media screen and (max-width:$screenIpad){
+    margin: 0px 0px 0px 10px;;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding-left: 0px;
+  }
+}
 .docCompleto{
   display: flex;
   width: 20px;
   height: 20px;
-  // margin: 0 auto;
   background-color: $warningGreen;
   border-radius: 50%;
   @media screen and (max-width:$screenMedium){
     height: 90%;
   }  
-  @media screen and (max-width:$screenIpad){
-  }
-  @media screen and (max-width:$screenMobile){
-  }
-  @media screen and (max-width:$screenMobileXs){
-  }
 }
-
 .docIncompleto{
   display: flex;
   width: 20px;
   height: 20px;
-  // margin: 0 auto;
   background-color: $warningYellow;
   border-radius: 50%;
 }
-
 .docVacio{
   display: flex;
   width: 20px;
   height: 20px;
-  // margin: 0 auto;
   background-color: $warningPink;
   border-radius: 50%;
 }
-
-.infoFileG{
+.infoCardDatos{
   border: 1px solid #E5E0E0;
-  border-left: 10px solid  $warningGreen !important;
   padding: 20px !important;
   border-radius: 10px;
+  background-color: $whiteColor;
+  &.infoFileG{
+    border-left: 10px solid  $warningGreen !important;
+  }
+  &.infoFileY{
+    border-left: 10px solid  $warningYellow !important;
+  }
+  &.infoFileR{
+    border-left: 10px solid  $warningPink !important;
+  }
 }
-
-.infoFileY{
-  border: 1px solid #E5E0E0;
-  border-left: 10px solid  $warningYellow !important;
-  padding: 20px !important;
-  border-radius: 10px;
-}
-
-.infoFileR{
-  border: 1px solid #E5E0E0;
-  border-left: 10px solid  $warningPink !important;
-  padding: 20px !important;
-  border-radius: 10px;
-}
-
 .infoDoc{
   color: #BFBFBF;
 }
-
 .fileImg{
   width: 100px;
 }
-
 .InfoDocuments{
   margin-top: 3%;
 }
-
 .indicadores {
   width: 45%;
   margin-top: 3%;
@@ -443,38 +294,36 @@ html:not([dir="rtl"]) .sidebar {
 }
 
 /*-- BALANCE ----*/
+.containerBalance{
+  @media screen and (max-width:$screenMedium){
+    margin: 0px 40px 0px 25px;
+  }
+  @media screen and (max-width:$screenIpad){
+    margin: 0px 50px 0px -15px;
+  }
+  @media screen and (max-width:$screenMobile){
+    padding-left: 15px;
+  }
+}
 .ultimoMov{
     border-bottom: 1px solid gray;
     padding: 15px 0px 15px 20px;
     display: inline;
 }
-
 .movimientos{
   align-items: center;
   margin-left: 10%;
   padding: 0px !important;
   margin: 6% !important;
 }
-
 .iconMov{
   width: 100%;
   left: -80px;
   @media screen and (max-width:$screenMedium){
     left: 0px;
   }  
-  @media screen and (max-width:$screenIpad){
-  }
-  @media screen and (max-width:$screenMobile){
-  }
-  @media screen and (max-width:$screenMobileXs){
-  }
 }
-
 .textNews{
   text-align: justify;
   margin-top: 30px;
 }
-
-// .tabulator-cell{
-//   height: 0px !important;
-// }

@@ -3,7 +3,6 @@
   height: 100vh;
   padding: 0%;
 }
-
 .mainTitle {
   color: $mainPink;
   font-weight: $fontWeightBold;
@@ -21,7 +20,6 @@
     padding: 10% 0% 5%;
   }
 }
-
 .mainTitle2 {
   color: $mainPink;
   font-weight: $fontWeightBold;
@@ -39,7 +37,6 @@
     font-size: $fontFour;
   }
 }
-
 .bgWhite{
   background-color: $whiteColor;
   height: 100vh;
@@ -47,7 +44,6 @@
     height: 110vh;
   }
 }
-
 .bgPink{
   background-color: $mainPink;
   height: 100vh;
@@ -55,8 +51,6 @@
     height: 25vh;
   }
 }
-
-
 /*---- LOGIN -----*/
 .titleWhite{
   color: $whiteColor;
@@ -76,7 +70,6 @@
     padding: 10% 10% 20%;
   }
 }
-
 .form {
   padding: 0px 0px 50px;
   @media screen and (max-width:$screenIpad){
@@ -84,7 +77,6 @@
     padding: 0;
   }
 }
-
 .inputLogin {
   background-color: $lightGray;
   border-radius: 5px;
@@ -93,11 +85,9 @@
   padding: 5px;
   
 }
-
 .input-group-prepend {
   padding: 10px;
 }
-
 .checkboxSumma {
   color: $darkPink;
   font-size: 1.2rem;
@@ -115,7 +105,6 @@
     padding: 0;
   }
 }
-
 .logoLogin{
   padding: $ten;
   width: $fifty;
@@ -128,7 +117,6 @@
     width: 120px;
   }
 }
-
 .bgTren{
   background-image: url(../src/assets/img/summa/bg/bgTren.jpg);
   background-position: bottom;
@@ -138,7 +126,6 @@
   margin-right: auto;
   position: relative;
 }
-
 .bgLogin{
   background-image: url(../src/assets/img/summa/bg/bgLogin.jpg);
   background-position-x: right;
@@ -153,7 +140,6 @@
     background-size: cover;
   }
 }
-
 .imgLogin{
   display: none;
   @media screen and (max-width:$screenMedium){
@@ -178,7 +164,6 @@
   }
 }
 
-
 /*----- REGISTRY ----------*/
 .bgRegistry {
   background-image: none;
@@ -188,7 +173,6 @@
     height: 110vh;
   }
 }
-
 
 /*---- RECOVER PASS -------*/
 .bgRecoverPass{
@@ -204,11 +188,9 @@
     background-size: contain;
   }
 }
-
 .mainTitleRP {
   padding: 20% 0% 5%;
 }
-
 .subtitle {
   padding-bottom: $ten;
   color: $darkGray;
@@ -221,11 +203,9 @@
     font-size: $fontTwo;
   }
 }
-
 .formRecoverPass {
   padding: 0px;
 }
-
 .btnTxt {
   color: $mainPink;
   font-size: $fontTwo;
@@ -242,7 +222,6 @@
     padding: 0;
   }
 }
-
 .logoRecoverPass {
   padding: 30% 10% 10%;
   width: 200px;
@@ -252,12 +231,10 @@
   }
 }
 
-
 /*----- NEW PASS ----*/
 .formNewPass {
   padding: 15px 0px 0px;
 }
-
 .imgNewPass{
   padding: 0%;
   @media screen and (max-width:$screenMedium){
@@ -268,7 +245,6 @@
     width: 150px;
   }
 }
-
 
 /*----- MESSAGE SUCCESS ------*/
 .jumbotronSumma{
@@ -298,11 +274,9 @@
     padding: 10% 0% 8% 0% !important;
   }
 }
-
 .lead{
   margin-top: 30px;
 }
-
 .bgMess{
   background-image: url(../src/assets/img/summa/bg/bgTrenBlur2.jpg);
   background-position: bottom;
@@ -314,9 +288,7 @@
   background-color: $mainPink;
   height: 100vh;
 }
-
 .logoMessa{
   margin-bottom: 55px;
   width: 150px;
 }
-

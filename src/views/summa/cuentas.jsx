@@ -3,12 +3,8 @@ import React, { Component } from 'react';
 import Title from './components/title';
 import Buscar from './components/search';
 import BtnGeneral from './components/btnGeneral';
-import MainTitle2 from './components/mainTitle2';
-import BtnSec from './components/btnSec';
 import BtnMain from './components/btnMain';
-import BtnBasic from './components/btnBasic';
 // IMAGENES
-import logo from '../../assets/img/summa/logo.png';
 import fileEjemplo from '../../assets/img/summa/file.jpg';
 import pasarela from '../../assets/img/summa/pasarelaYP.jpg';
 import paytogo from '../../assets/img/summa/paytogo.png';
@@ -24,22 +20,17 @@ import {
   NavLink,
   Row,
   Col,
-  Alert,
   Button,
   Modal,
   ModalHeader,
   ModalBody,
   ModalFooter,
-  InputGroup, 
-  InputGroupAddon, 
   Input, 
   FormGroup, 
   Label,
-  CustomInput,
   Form,
 } from 'reactstrap';
 import classnames from 'classnames';
-import ReactTable from 'react-table';
 import CustomTabulatorTable from './componentTabulatorTable';
 import 'react-table/react-table.css';
  
@@ -65,9 +56,6 @@ const columns = [
   {
     rowHandle: true,
     align: 'center',
-    // formatter: () => {
-    //   return `<i class="fa fa-eye"></i>`;
-    // },
     headerSort: false,
     width: 30,
     minWidth: 30,
@@ -82,24 +70,15 @@ const columns = [
 
   { title: 'No.', field: 'numero', width: 200 },
   { title: 'Fecha de déposito', field: 'fecha' },
-  {
-    title: 'Monto',
-    field: 'monto',
-  },
-  {
-    title: 'Método',
-    field: 'metodo',
-  },
-  {
-    title: 'Estado',
-    field: 'estado',
+  { title: 'Monto', field: 'monto', },
+  { title: 'Método', field: 'metodo', },
+  { title: 'Estado', field: 'estado', 
     formatter: (row, event) => {
       const dataRow = row.getData().estado;
       return `<div class="warningTable alert alert-success fade show" role="alert"><i class="fa fa-clock-o" aria-hidden="true"></i> ${dataRow}</div>`;
     },
   },
 ];
-
 
 class Cuentas extends Component {
   constructor(props) {
@@ -119,9 +98,8 @@ class Cuentas extends Component {
   render() {
     const { activeTab } = this.state;
 
-
     return (
-      <div className="animated fadeIn bgCuentas">
+      <div className="animated fadeIn containerCuentas" id="cuentas">
         <Title title="Depósitos" />
         <Nav tabs>
           <NavItem>
@@ -133,9 +111,7 @@ class Cuentas extends Component {
                 });
               }}
             >
-              <p className="center">
-                Transferencia bancaría/Depósito en ventanilla
-              </p>
+              <p className="center">Transferencia bancaría/Depósito en ventanilla</p>
             </NavLink>
           </NavItem>
           <NavItem>
@@ -165,14 +141,14 @@ class Cuentas extends Component {
         </Nav>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="1">
-            <Container>
+            <Container className="containTabs">
               <Row>
                 <Col sm="12" md={{ size: 12}}>
                   <p className="MessageText">Para realizar un depósito mediante transferencia bancaria o deposito en ventanilla, puede realizarlo con los datos que a continuación le proporcionamos, por favor indique el monto y la opción deseada:</p>
                   {/* Este formulario es el primero que se muestra dentro de esta sección */}
                   <Container>
                     <Row>
-                      <Col sm="12" md={{ size: 8}}>
+                      <Col sm="12" md={{ size: 8}} className="bgForm">
                         <Form>
                           <Row>
                             <Col sm="12" md="6">
@@ -212,45 +188,47 @@ class Cuentas extends Component {
                           </Row>
                         </Form>
                         <br/><br/><br/>
-                        {/* Todos los datos a continuación agregado en <p> aparecen solo hasta que se ha elegido el tipo de cuenta */}
-                        <Container className="containerDatos datosCuentas">
-                        <Row>
-                          <Col sm="12" md="6">
-                            <h6>Nombre del beneficiario</h6>
-                            <p>YOURPAYCHOICE SA de CV</p>
-                            <br/><br/>
-                          </Col>
-                          <Col sm="12" md="6">
-                            <h6>Banco beneficiario</h6>
-                            <p>Santander MXN</p>
-                            <br/><br/>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col sm="12" md="6">
-                            <h6>Dirección del banco beneficiario</h6>
-                            <p>Av. Insurgentes Sur 859 piso 2 ofna 249 Col. Nápoles Delegación Benito Juárez, CDMX CP 03810</p>
-                            <br/><br/>
-                          </Col>
-                          {/* El número de cuenta solo aparece si es transferencia nacional */}
-                          <Col sm="12" md="6">
-                            <h6>No. de Cuenta</h6>
-                            <p>65-50581142-9</p>
-                            <br/><br/>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col sm="12" md="6">
-                            <h6>CLABE</h6>
-                            <p>014180655058114296</p>
-                            <br/><br/>
-                          </Col>
-                          <Col></Col>
-                        </Row>
+                      </Col>
+                    </Row>
+                    {/* Todos los datos a continuación agregado en <p> aparecen solo hasta que se ha elegido el tipo de cuenta */}
+                    <Row>
+                      <Col>
+                        <Container className="containerDatos">
+                          <Row>
+                            <Col sm="12" md="6">
+                              <h6>Nombre del beneficiario</h6>
+                              <p>YOURPAYCHOICE SA de CV</p>
+                              <br/><br/>
+                            </Col>
+                            <Col sm="12" md="6">
+                              <h6>Banco beneficiario</h6>
+                              <p>Santander MXN</p>
+                              <br/><br/>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col sm="12" md="6">
+                              <h6>Dirección del banco beneficiario</h6>
+                              <p>Av. Insurgentes Sur 859 piso 2 ofna 249 Col. Nápoles Delegación Benito Juárez, CDMX CP 03810</p>
+                              <br/><br/>
+                            </Col>
+                            {/* El número de cuenta solo aparece si es transferencia nacional */}
+                            <Col sm="12" md="6">
+                              <h6>No. de Cuenta</h6>
+                              <p>65-50581142-9</p>
+                              <br/><br/>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col sm="12" md="6">
+                              <h6>CLABE</h6>
+                              <p>014180655058114296</p>
+                              <br/><br/>
+                            </Col>
+                            <Col></Col>
+                          </Row>
                         </Container>
-                        <Col md={{ size: 4 }}>
-                          <BtnGeneral className="btnTarjeta" title="Generar movimiento"/>
-                        </Col>
+                        <Row><Col md={{ size: 4 }} className="btnTarjeta" ><BtnGeneral title="Generar movimiento"/></Col></Row>
                       </Col>
                     </Row>
                   </Container>
@@ -259,14 +237,14 @@ class Cuentas extends Component {
             </Container>
           </TabPane>
           <TabPane tabId="2">
-            <Container>
+            <Container className="containTabs">
               <Row>
                 <Col sm="12">
                   <p className="MessageText">Para realizar un pago con tarjeta de crédito o débito, utilice nuestra terminal en línea indicando monto, referencia y dando clic en el botón YPC:</p>
                   {/* Este formulario es el primero que se muestra dentro de esta sección */}
                   <Container>
                     <Row>
-                      <Col sm="12" md={{ size: 6}}>
+                      <Col sm="12" md={{ size: 6}}  className="bgForm">
                         <Form>
                           <p>Monto</p>
                           <FormGroup>
@@ -301,21 +279,14 @@ class Cuentas extends Component {
                     </Row>
                   </Container>
                   <br/><br/><br/>
-                   {/* Despues de dar click en alguno de los logos del formulario anterior se esconde el primer formulario y se muestra este */}
+                  {/* Despues de dar click en alguno de los logos del formulario anterior se esconde el primer formulario y se muestra este */}
                   <div><img src={pasarela} alt="logo" className="imgPasarela"/></div>
                 </Col>
               </Row>
             </Container>
           </TabPane>
           <TabPane tabId="3">
-            {/* <Container>
-              <Row>
-                <Col sm="12" md={{ size: 12 }} className="center containerTab2">
-                  <Buscar className="center"/>
-                </Col>
-              </Row>
-            </Container> */}
-            <Container>
+            <Container className="containTabs">
               <Row>
                 <Col sm="12" md={{ size: 12 }} className="center containerTab2">
                   <CustomTabulatorTable

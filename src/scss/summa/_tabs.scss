@@ -9,24 +9,20 @@
     font-size: $fontOne;
   }
 }
-
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
   color: $mainPink;
   border: none;
   border-bottom: medium solid $mainPink;
 }
-
 .nav-tabs .nav-link.active.nav-link.active:hover {
   color: $mainPink;
   border: none;
   border-bottom: medium solid $mainPink;
 }
-
 .tab-content .tab-pane {
   padding: $fontFive;
   border: none;
 }
-
 .alfa_main .tab-content {
   border: none;
   background: unset;
@@ -36,7 +32,6 @@
     margin-bottom: 0px;
   }
 }
-
 .tab-content .tab-pane {
   padding: 0 40px;
   @media screen and (max-width:1024px){
@@ -44,22 +39,34 @@
     padding: 0;  
   }
 }
-
+.tab-content {
+  margin-top: -1px;
+  background: transparent !important;
+  border: none !important;
+}
 .containerTab {
   margin: 8% 0% 0%;
   padding: 0;
 }
-
 .containerTab2 {
   margin: 0;
   padding: 0;
   margin-top: 8%;
 }
-
 .containerTabTitle {
   margin: 0;
   padding: 0;
   margin-top: 5%;
 }
-
-
+.containTabs{
+  margin-left: -10px;
+  @media screen and (max-width:$screenMedium){
+    margin-left: -5px;
+  }
+  @media screen and (max-width:$screenIpad){
+    margin-left: 0px;
+  }
+  @media screen and (max-width:$screenMobile){
+    margin-left: 10px;
+  }
+}

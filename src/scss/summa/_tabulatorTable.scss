@@ -1,98 +1,87 @@
 // TABULATOR HEADER
 .tabulator {
-    border: none !important;
-    font-size: 15px;
+  border: none !important;
+  font-size: 15px;
 }
-
 .tabulator .tabulator-header {
-    border-bottom: none;
-    background-color: $darkGray !important;
-    color: $whiteColor !important;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 10px 0 10px 0;
+  border-bottom: none;
+  background-color: $darkGray !important;
+  color: $whiteColor !important;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 0 10px 0;
 }
-
 .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-arrow {
-    display: none !important;
+  display: none !important;
 }
-
 .tabulator .tabulator-header .tabulator-col {
-    border-right: none !important;
-    background: none !important;
-    text-align: left;
-    vertical-align: bottom;
-    overflow: hidden;
+  border-right: none !important;
+  background: none !important;
+  text-align: left;
+  vertical-align: bottom;
+  overflow: hidden;
 }
-
 
 // TABULATOR BODY
 .tabulator-row {
-    min-height: 22px;
-    height: 70px;
-    padding: 5px 2px 5px 2px;
-    cursor: pointer;
+  min-height: 22px;
+  height: 70px;
+  padding: 5px 2px 5px 2px;
+  cursor: pointer;
 }
-
 .tabulator-row .tabulator-cell {
-    padding: 5px;
-    border-right: none !important;
-    text-align: left;
-    overflow: hidden;
-    height: auto;
-    font-size: 1rem;
+  padding: 5px;
+  border-right: none !important;
+  text-align: left;
+  overflow: hidden;
+  height: auto;
+  font-size: 1rem;
 }
-
 .tabulator .tabulator-tableHolder {
-    overflow: hidden !important;
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
-    @media screen and (max-width:$screenMedium){
-        overflow: auto !important;
-        overflow-x: auto !important;
-        overflow-y: auto !important;
-    }
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  @media screen and (max-width:$screenMedium){
+    overflow: auto !important;
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+  }
 }
 
 // TABULATOR ELEMENTS
 .item-btn {
-    display: inline-block;
+  display: inline-block;
 }
-
 .item-btn .btn-icon-edit {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    color: $mainPink;
-    opacity: 1;
-    border: 0 !important;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    cursor: hand;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: $mainPink;
+  opacity: 1;
+  border: 0 !important;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  cursor: hand;
 }
-
 .item-btn .btn-icon-edit:hover {
-    opacity: .9;
-    background-color: transparent;
-    color: $mainPink;
+  opacity: .9;
+  background-color: transparent;
+  color: $mainPink;
 }
-
 button:not(:disabled):not(.disabled):active{
-    color: $blackColor;
-    background-color: inherit;
-    border-color: inherit;
+  color: $blackColor;
+  background-color: inherit;
+  border-color: inherit;
 }
-
 button:focus {
-    outline: none !important;
-    outline-color: none !important;
+  outline: none !important;
+  outline-color: none !important;
 }
-
 .warningTable {
-    background: $yellow;
-    color: $whiteColor;
-    text-align: center;
-    font-size: $fontTwo;
-    padding: 5px 0px 5px 0px;
+  background: $yellow;
+  color: $whiteColor;
+  text-align: center;
+  font-size: $fontTwo;
+  padding: 5px 0px 5px 0px;
 }

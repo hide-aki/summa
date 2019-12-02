@@ -56,7 +56,7 @@ class Datos extends Component {
     } = this.state
 
     return ( 
-      <div className="animated fadeIn bgDatos">
+      <div className="animated fadeIn containDatos" id="datos">
         <Title title="Datos Generales"/>
         <Nav tabs>
           <NavItem>
@@ -98,27 +98,21 @@ class Datos extends Component {
         </Nav>
         <TabContent activeTab={activeTab}>
           <TabPane tabId="1">
-            <Container>
+            <Container  className="containTabs">
               <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }} className="containerTab">
+                <Col sm="12" md={{ size: 10, offset: 1 }} className="containerTab bgForm">
                   <Form>
                     <FormGroup row>
                       <Label for="exampleSelect" sm={3}>Nombre/s</Label>
-                      <Col sm={7}>
-                        <Input type="text" name="select" id="exampleSelect" placeholder=""/>
-                      </Col>
+                      <Col sm={7}><Input type="text" name="select" id="exampleSelect" placeholder=""/></Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label for="exampleSelect" sm={3}>Apellido Paterno</Label>
-                      <Col sm={7}>
-                        <Input type="text" name="select" id="exampleSelect" />
-                      </Col>
+                      <Col sm={7}><Input type="text" name="select" id="exampleSelect" /></Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label for="exampleSelect" sm={3}>Apellido Materno</Label>
-                      <Col sm={7}>
-                        <Input type="text" name="select" id="exampleSelect" />
-                      </Col>
+                      <Col sm={7}><Input type="text" name="select" id="exampleSelect" /></Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label for="exampleSelectMulti" sm={3}>Género</Label>
@@ -131,9 +125,7 @@ class Datos extends Component {
                     </FormGroup>
                     <FormGroup row>
                       <Label for="exampleEmail" sm={3}>Correo electrónico</Label>
-                      <Col sm={7}>
-                        <Input type="email" name="email" id="exampleEmail"/>
-                      </Col>
+                      <Col sm={7}><Input type="email" name="email" id="exampleEmail"/></Col>
                     </FormGroup>
                     <FormGroup row>
                       <Label for="exampleEmail" sm={3}>Fecha de Nacimiento</Label>
@@ -167,9 +159,7 @@ class Datos extends Component {
                     </FormGroup>
                     <FormGroup row>
                       <Label for="exampleSelect" sm={3}>Dirección</Label>
-                      <Col sm={7}>
-                        <Input type="text" name="select" id="exampleSelect" placeholder=""/>
-                      </Col>
+                      <Col sm={7}><Input type="text" name="select" id="exampleSelect" placeholder=""/></Col>
                     </FormGroup>
                   </Form>
                 </Col>
@@ -177,57 +167,48 @@ class Datos extends Component {
             </Container>
           </TabPane>
           <TabPane tabId="2">
-            <Container>
+            <Container className="containTabs">
               <Row>
                 <Col sm="12" md={{ size: 10, offset: 1 }} className="containerTab">
-
                 </Col>
               </Row>
             </Container>
           </TabPane>
           <TabPane tabId="3">
-            <Container>
+            <Container  className="containTabs">
+              <Row><Col><div><img src={indicadores} alt="logo" className="indicadores"/></div></Col></Row>
               <Row>
-                <Col>
-                  <div><img src={indicadores} alt="logo" className="indicadores"/></div>
-                </Col>
-              </Row>
-              <Row>
-                <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoFileG">
+                <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoCardDatos infoFileG">
                   <Row>
                     <Col>
                       <div><img src={cardEjem} alt="logo" className="fileImg"/></div>
                       {/* <div><img src={card} alt="logo" className="fileImg"/></div>Esta imagen se vera en caso de que no exista algun archivo subido por el usuario */}
                     </Col>
                     <Col  className="InfoDocuments">
-                    <div><strong>Identificación Oficial</strong></div>
-                    <div className="infoDoc">12345678909876</div>      
-                    <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>{/* Esta imagen se vera en caso de que no exista algun archivo subido por el usuario */}
+                      <div><strong>Identificación Oficial</strong></div>
+                      <div className="infoDoc">12345678909876</div>      
+                      <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>{/* Esta imagen se vera en caso de que no exista algun archivo subido por el usuario */}
                     </Col>
                   </Row>                
                 </Col>
-                <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoFileR">
+                <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoCardDatos infoFileR">
                   <Row>
-                    <Col className="">
-                      <div><img src={domi} alt="logo" className="fileImg"/></div>
-                    </Col>
+                    <Col className=""><div><img src={domi} alt="logo" className="fileImg"/></div></Col>
                     <Col className="InfoDocuments">
-                    <div><strong>Comprobante de Domicilio</strong></div>
-                    <div className="infoDoc">-----</div>
-                    <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>
+                      <div><strong>Comprobante de Domicilio</strong></div>
+                      <div className="infoDoc">-----</div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>
                     </Col>
                   </Row>                
                 </Col>
-                <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoFileY">
+                <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoCardDatos infoFileY">
                   <Row>
-                    <Col className="">
-                      <div><img src={credit} alt="logo" className="fileImg"/></div>{/* Esta imagen se vera en caso de que no exista algun archivo subido por el usuario */}
-                    </Col>
+                    <Col className=""><div><img src={credit} alt="logo" className="fileImg"/></div>{/* Esta imagen se vera en caso de que no exista algun archivo subido por el usuario */}</Col>
                     <Col className="InfoDocuments">
-                    <div><strong>Tarjeta de Crédito</strong></div>
-                    <div className="infoDoc">0987654321123456</div>
-                    <div className="infoDoc">12/24</div>
-                    <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>
+                      <div><strong>Tarjeta de Crédito</strong></div>
+                      <div className="infoDoc">0987654321123456</div>
+                      <div className="infoDoc">12/24</div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>
                     </Col>
                   </Row>                
                 </Col>
@@ -238,11 +219,7 @@ class Datos extends Component {
         <div>
           <Modal isOpen={this.state.modal} toggle={this.toggle}>
             <ModalHeader className="modalHeader">
-              <Row>
-                <Col md={{ size: 12 }}>
-                  <h5 className="titleModal">Editar Documento</h5>
-                </Col>
-              </Row>
+              <Row><Col md={{ size: 12 }}><h5 className="titleModal">Editar Documento</h5></Col></Row>
             </ModalHeader>
             <ModalBody md={{ size: 8, offset: 2 }} className="bodyModal">
               <Row>
@@ -285,17 +262,12 @@ class Datos extends Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
-                </Col>
+                <Col></Col>
                 <Col xs="12">
                   <Container className="btnTC center">
                     <Row>
-                      <Col onClick={this.toggle}>
-                        <BtnGeneralSec title="Cancelar" className="btnChild"/>
-                      </Col>
-                      <Col onClick={this.toggle}>
-                        <BtnGeneral title="Aceptar" className="btnChild"/>
-                      </Col>
+                      <Col onClick={this.toggle}><BtnGeneralSec title="Cancelar" className="btnChild"/></Col>
+                      <Col onClick={this.toggle}><BtnGeneral title="Aceptar" className="btnChild"/></Col>
                     </Row>
                   </Container>
                 </Col>

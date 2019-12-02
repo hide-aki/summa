@@ -1,38 +1,41 @@
 import React, { Component } from 'react';
 import Title from './components/title';
-import BtnSec from './components/btnSec';
-import BtnMain from './components/btnMain';
 import BtnGeneral from './components/btnGeneral';
-import BtnGeneralSec from './components/btnGeneralSec';
+import {  Row, Col, Container, } from 'reactstrap';
 
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col, Container, Popover, PopoverHeader, PopoverBody, Form, FormGroup, Label, Input } from 'reactstrap';
-import classnames from 'classnames';
- 
+// POPOVERS
+import PopoverTerminos from './Popovers/popoverTerminos'
+
+// PT-COMPONENTS
+import {
+  CustomButton,
+} from "@pleedtech/pt-components";
+
+// ANT DESIGN
+import { Drawer, Popover } from 'antd';
 
 class Terminos extends Component {
   constructor(props) {
     super(props);
     this.state = {  
       activeTab: "1",
+      popoverTerminos: false,
     }
   }
     
   render() {
 
     const {
-      activeTab,
+      popoverTerminos,
     } = this.state
+
+    const contentReporte = (
+      <PopoverTerminos/>
+    )
     
-
-  //  const { id, item } = this.state.props;
-  //  const [popoverOpen, setPopoverOpen] = this.useState(false);
-
-  // const toggle = () => setPopoverOpen(!popoverOpen);
-
-
     return ( 
       
-      <div className="animated fadeIn bgTerminos">
+      <div className="animated fadeIn" id="terminos">
         <Container className="tC">
           <Row><Col><Title title="Términos y Condiciones"/></Col></Row>
           <Row>
@@ -268,37 +271,31 @@ class Terminos extends Component {
           <Container className="btnTC">
             <Row>
               <Col>
-                <BtnGeneralSec title="Rechazar" className="btnChild"/>
+                {/* <BtnGeneralSec title="Rechazar" className="btnChild"/> */}
+                <Popover
+                  content={contentReporte}
+                  // title="Title"
+                  trigger="click"
+                  visible={popoverTerminos}
+                  onVisibleChange={()=>{
+                    this.setState(state => ({
+                      popoverTerminos: !state.popoverTerminos
+                    }));
+                  }}
+                  placement="top"
+                >
+                  <CustomButton
+                    isVisible
+                    label="Rechazar"
+                    className="btnGeneralSec"
+                    // classIcon="fa fa-file-text-o"
+                    onClick={()=>{}}
+                  />
+                </Popover>
               </Col>
-              <Col>
-                <BtnGeneral title="Aceptar" className="btnChild"/>
-              </Col>
+              <Col><BtnGeneral title="Aceptar" className="btnChild"/></Col>
             </Row>
           </Container>
-{/* 
-          <span>
-            <Button
-              className="mr-1"
-              color="secondary"
-              id={"Popover-" + id}
-              type="button"
-            >
-              {item.text}
-            </Button>
-            <Popover
-              placement={item.placement}
-              isOpen={popoverOpen}
-              target={"Popover-" + id}
-              toggle={toggle}
-            >
-              <PopoverHeader>Popover Title</PopoverHeader>
-              <PopoverBody>
-                Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-                Pellentesque ornare sem lacinia quam venenatis vestibulum.
-              </PopoverBody>
-            </Popover>
-          </span> */}
-
         </Container>
       </div>
     );
