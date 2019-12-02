@@ -52,7 +52,7 @@ const DefaultFooter = React.lazy(() => import('./DefaultFooter.1'));
 class DefaultLayout extends Component {
   constructor(props) {
     super(props);
-    this.state = { translateRoutes: [], imageRoute: '' };
+    this.state = { translateRoutes: [], imageRoute: 'bgMain' };
     this.messagesFunctions = new MessagesFunctions(props.selectMessages);
   }
 
