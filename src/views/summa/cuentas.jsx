@@ -264,11 +264,12 @@ class Cuentas extends Component {
                             <Col></Col>
                           </Row>
                         </Container>
-                        <Row>
-                          <Col md={{ size: 4 }} className="btnTarjeta">
-                            <BtnGeneral title="Generar movimiento" />
-                          </Col>
-                        </Row>
+                        <Col sm="12" md={{ size: 3 }}>
+                          <BtnGeneral
+                            title="Generar movimiento"
+                            className="btnChild"
+                          />
+                        </Col>
                       </Col>
                     </Row>
                   </Container>

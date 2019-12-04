@@ -18,6 +18,7 @@ const Balance = React.lazy(() => import('./views/summa/balance'));
 const Toasters = React.lazy(() => import('./views/summa/toasterMessages'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
+
 const routes = [
   { path: '/logout', name: 'Logout', component: Auth },
   { path: '/cuenta', name: 'Cuenta', component: Cuenta },
