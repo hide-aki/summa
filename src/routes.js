@@ -17,6 +17,7 @@ const Terminos = React.lazy(() => import('./views/summa/terminosycondiciones'));
 const Balance = React.lazy(() => import('./views/summa/balance'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
+
 const routes = [
   { path: '/logout', name: 'Logout', component: Auth },
   { path: '/cuenta', name: 'Cuenta', component: Cuenta },

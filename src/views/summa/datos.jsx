@@ -162,6 +162,8 @@ class Datos extends Component {
                       <Col sm={7}><Input type="text" name="select" id="exampleSelect" placeholder=""/></Col>
                     </FormGroup>
                   </Form>
+                  <div className="espacio"></div>
+                  <Col sm="12" md={{ size: 3 }}><BtnGeneral title="Guardar cambios" className="btnChild"/></Col>
                 </Col>
               </Row>
             </Container>
