@@ -58,6 +58,7 @@ export default class ToasterMessages extends Component {
           <button
             type="button"
             className="btnIcon"
+            color="gray"
             onClick={() => {
               this.openNotification('Warning', 'bg-warning');
             }}
@@ -79,11 +80,12 @@ export default class ToasterMessages extends Component {
         <Col>
           <button
             type="button"
-            className="btnIcon"
+            className="btnIcon vverde"
             onClick={() => {
               this.openNotification('Info', 'bg-info');
             }}
           >
+
             Info
           </button>
         </Col>

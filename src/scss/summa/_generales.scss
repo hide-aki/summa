@@ -328,3 +328,11 @@ html:not([dir="rtl"]) .sidebar {
   text-align: justify;
   margin-top: 30px;
 }
+
+.ant-notification .ant-notification-topRight{
+  background-color: orchid !important;
+}
+
+.fileControls{
+  color: $mainPink;
+}

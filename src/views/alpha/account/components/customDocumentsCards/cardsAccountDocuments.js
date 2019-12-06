@@ -301,15 +301,15 @@ const CardsAccountDocuments = (props) => {
 
   return (
     <CustomRow>
-      <CustomCol xs="12" md="11">
+      <CustomCol xs="12" md="12">
         <p>
           El tipo de archivo debe ser:{' '}
-          <strong>PDF, JPG o PNG (Máximo 5 MB).</strong>
+          <b>PDF, JPG o PNG (Máximo 5 MB).</b>
         </p>
       </CustomCol>
-      <CustomCol xs="12" md="6">
-        <CustomCard className="">
-          <CustomCardHeader>
+      <CustomCol xs="12" md="12">
+        <CustomCard className="archivoModal">
+          {/* <CustomCardHeader>
             <h5 className="m-0 p-0">
               <i className="fa fa-check-circle mt-0 yellow" />{' '}
               {messagesFunctions.getMessageFromListMessagesCode(
@@ -317,7 +317,7 @@ const CardsAccountDocuments = (props) => {
                 documentType,
               )}
             </h5>
-          </CustomCardHeader>
+          </CustomCardHeader> */}
           <CustomCardBody className="wrap-files">
             <CustomRow>
               <CustomCol xs="12">

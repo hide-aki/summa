@@ -507,17 +507,18 @@ p.pddng-p {
 
 .buttonControlCheck .btn {
   background-color: $cabinet-color;
-  color: #000;
+  color: #EC135B;
+  cursor: pointer;
 }
 .buttonControlCheck .btn:hover {
   background-color: $cabinet-color-hover;
   border-color: $cabinet-color-hover;
-  color: $cabinet-text-color-button;
+  color: #000;
 }
 
 .cardFileList {
   padding: 6px 10px 6px 10px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #ECECEC;
   border-radius: 5px !important;
   margin-bottom: 5px;
 }

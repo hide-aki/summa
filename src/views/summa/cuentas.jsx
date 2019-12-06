@@ -455,14 +455,11 @@ class Cuentas extends Component {
             <ModalFooter className="footerModal">
               <Row>
                 <Col sm="12" md={{ size: 12 }} className="center">
-                  <p>
-                    El tipo de archivo debe ser: PDF, JPG o PNG (Máximo 5 MB).
-                  </p>
                   <h4>Comprobante de transferencia</h4>
-                  <BtnMain title="Subir Archivo" />
+                  {/* <BtnMain title="Subir Archivo" /> */}
                   {/* <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '} */}
                 </Col>
-                <Col>
+                <Col sm="12" md={{ size: 10, offset: 1 }} className="center">
                   <CardsAccountDocuments
                     idTransactionCL={''}
                     idPaymentType={''}
@@ -471,16 +468,16 @@ class Cuentas extends Component {
                 </Col>
               </Row>
               {/* Aqui se visualiza el documento cargado solo en caso de que exista alguno */}
-              <Row>
+              {/* <Row>
                 <Col
                   sm="12"
                   md={{ size: 10, offset: 1 }}
                   className="center archivoModal"
                 >
                   <Row>
-                    <Col>
+                    <Col> */}
                       {/* Ejemplo de visualización de archivo */}
-                      <div>
+                      {/* <div>
                         <img src={fileEjemplo} alt="logo" className="file" />
                       </div>
                     </Col>
@@ -491,7 +488,7 @@ class Cuentas extends Component {
                     </Col>
                   </Row>
                 </Col>
-              </Row>
+              </Row> */}
             </ModalFooter>
           </Modal>
         </div>
