@@ -178,7 +178,7 @@ class Datos extends Component {
           </TabPane>
           <TabPane tabId="3">
             <Container  className="containTabs">
-              <Row><Col><div><img src={indicadores} alt="logo" className="indicadores"/></div></Col></Row>
+              {/* <Row><Col><div><img src={indicadores} alt="logo" className="indicadores"/></div></Col></Row> */}
               <Row>
                 <Col sm="12" md={{ size: 7 }} className="containerTabTitle infoCardDatos infoFileG">
                   <Row>
@@ -189,7 +189,10 @@ class Datos extends Component {
                     <Col  className="InfoDocuments">
                       <div><strong>Identificación Oficial</strong></div>
                       <div className="infoDoc">12345678909876</div>      
-                      <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>{/* Esta imagen se vera en caso de que no exista algun archivo subido por el usuario */}
+                      {/* <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div> */}
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-upload"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-download"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-trash"></i></button></div>
                     </Col>
                   </Row>                
                 </Col>
@@ -198,8 +201,10 @@ class Datos extends Component {
                     <Col className=""><div><img src={domi} alt="logo" className="fileImg"/></div></Col>
                     <Col className="InfoDocuments">
                       <div><strong>Comprobante de Domicilio</strong></div>
-                      <div className="infoDoc">-----</div>
-                      <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>
+                      <div className="infoDoc">03100 de, Amores 1029, Col del Valle Centro, Benito Juárez, Ciudad de México, CDMX</div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-upload"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-download"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-trash"></i></button></div>
                     </Col>
                   </Row>                
                 </Col>
@@ -210,7 +215,9 @@ class Datos extends Component {
                       <div><strong>Tarjeta de Crédito</strong></div>
                       <div className="infoDoc">0987654321123456</div>
                       <div className="infoDoc">12/24</div>
-                      <div class="item-btn"><button type="button" class="btn-icon-edit" onClick={this.toggle}><i class="fa fa-edit"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-upload"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-download"></i></button></div>
+                      <div class="item-btn"><button type="button" class="btn-icon-edit"><i class="fa fa-trash"></i></button></div>
                     </Col>
                   </Row>                
                 </Col>
